@@ -1,0 +1,9 @@
+variable,rcsVariables,knots
+AgeC_rcs1,AgeC_rcs1;AgeC_rcs2;AgeC_rcs3;AgeC_rcs4,-11.5;-6.5;-1.5;5.5;16.5
+PackYearsC_rcs1,PackYearsC_rcs1;PackYearsC_rcs2,-21.2;-10.35;34.8
+DrinksLastWeekC_rcs1,DrinksLastWeekC_rcs1;DrinksLastWeek_rcs2,-4.96;-3.96;9.04
+FruitVegC_rcs1,FruitVegC_rcs1;FruitVegC_rcs2,-2.37;-0.27;2.83
+JuiceC_rcs1,JuiceC_rcs1;JuiceC_rcs2,-0.792;0.208;1.208
+PotatoC_rcs1,PotatoC_rcs1;PotatoC_rcs2,-0.402;-0.102;0.498
+PhysicalActivityC_rcs1,PhysicalActivityC_rcs1;PhysicalActivityC_rcs2,-1.9;-0.1;2.7
+BMIC_rcs1,BMIC_rcs1;BMIC_rcs2,-4.8;-0.67;5.46592
