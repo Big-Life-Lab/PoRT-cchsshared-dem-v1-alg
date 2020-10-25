@@ -46,9 +46,9 @@ These files capture all of the information needed to calcuate the model outcome 
 
 Other files:
 
-* *DemPoRT-R-survey-structure.lss* - Lime Survey file survey questions used to collect model variable information, when DemPoRT is to be used for individual-level prediction, including skip patterns
+* *DemPoRT-R-survey-structure.lss* - Lime Survey file survey questions used to collect model variable information, when DemPoRT is to be used for individual-level prediction, including skip patterns -- coming soon
 
-* *DemPoRT-R-transformations.xml* - Links the variable outputs from the Lime Survey file to the starting variables (listed in variables.csv)
+* *DemPoRT-R-transformations.xml* - Links the variable outputs from the Lime Survey file to the starting variables (listed in variables.csv) -- coming soon
 
 
 ## References
