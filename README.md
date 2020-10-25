@@ -11,15 +11,15 @@ DemPoRT was developed and validated using Ontario individuals age 55+ from the 2
 
 *5-year cumulative incidence of dementia*
 
-Men: 0.044, 95% CI: 0.042–0.047; women: 0.057, 95% CI: 0.055–0.060).
+  Men: 0.044, 95% CI: 0.042–0.047; women: 0.057, 95% CI: 0.055–0.060).
 
 *Discrimination in temporal validation*
 
-Men: C statistic 0.83, 95% CI: 0.81–0.85; women: 0.83, 95% CI: 0.81–0.85).
+  Men: C statistic 0.83, 95% CI: 0.81–0.85; women: 0.83, 95% CI: 0.81–0.85).
 
 *Calibration in temporal validation*
 
-Calibration slopes in the validation data were 0.7859 among males and 0.8666 among females. 
+  Calibration slopes in the validation data were 0.7859 among males and 0.8666 among females. 
 
 Trial registration: ClinicalTrials.gov, no. NCT03155815
 
@@ -30,25 +30,25 @@ The recommended algorithm for use in the clinical or population setting.
 ### Files include:
 These files capture all of the information needed to calcuate the model outcome from starting variables:
 
-*variables.csv* - Starting variable information, including labels
+* *variables.csv* - Starting variable information, including labels
 
-*variable-details.csv* - More infomration about starting variables, inlcuding information about continuous varibale units and valid range, and categorical variable categories and dummy variable specification
+* *variable-details.csv* - More infomration about starting variables, inlcuding information about continuous varibale units and valid range, and categorical variable categories and dummy variable specification
 
-*fine-and-gray.csv* - Model beta coefficients; DemPoRT uses a Fine and Gray subdistribution model
+* *fine-and-gray.csv* - Model beta coefficients; DemPoRT uses a Fine and Gray subdistribution model
 
-*model-steps.csv* - Documents how the starting variables are transformed into the final model variables, including the creation of dummy variables, variable centering, creation of restricted cubic spline and interaction variables
+* *model-steps.csv* - Documents how the starting variables are transformed into the final model variables, including the creation of dummy variables, variable centering, creation of restricted cubic spline and interaction variables
 
-*center.csv* - Specifies the mean values to use for variable centering
+* *center.csv* - Specifies the mean values to use for variable centering
 
-*rcs.csv* - Specifies the variables used to create restricted cubic spline variables, including knot locations and names of the new variables
+* *rcs.csv* - Specifies the variables used to create restricted cubic spline variables, including knot locations and names of the new variables
 
-*interactions.csv* - Specifies the variables to be interacted and the names of the new variables
+* *interactions.csv* - Specifies the variables to be interacted and the names of the new variables  
 
 Other files:
 
-*DemPoRT-R-survey-structure.lss* - Lime Survey file survey questions used to collect model variable information, when DemPoRT is to be used for individual-level prediction, including skip patterns
+* *DemPoRT-R-survey-structure.lss* - Lime Survey file survey questions used to collect model variable information, when DemPoRT is to be used for individual-level prediction, including skip patterns
 
-*DemPoRT-R-transformations.xml* - Links the variable outputs from the Lime Survey file to the starting variables (listed in variables.csv)
+* *DemPoRT-R-transformations.xml* - Links the variable outputs from the Lime Survey file to the starting variables (listed in variables.csv)
 
 
 ## References
