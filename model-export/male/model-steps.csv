@@ -1,6 +1,6 @@
 ﻿step,fileName,notes
-center,center.csv,
 dummy,,
-interact,,
+center,center.csv,
+interaction,interactions.csv,
 rcs,rcs.csv,
 fine-and-gray,fine-and-gray.csv,
