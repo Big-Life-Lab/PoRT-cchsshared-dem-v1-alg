@@ -11,15 +11,15 @@ DemPoRT was developed and validated using Ontario individuals age 55+ from the 2
 
 *5-year cumulative incidence of dementia*
 
-  Males: 0.044 (95% CI: 0.042, 0.047); Females: 0.057 (95% CI: 0.055, 0.060)
+* Males: 0.044 (95% CI: 0.042, 0.047); Females: 0.057 (95% CI: 0.055, 0.060)
 
 *Discrimination in temporal validation*
 
-  Males: C statistic 0.83 (95% CI: 0.81, 0.85); Females: 0.83 (95% CI: 0.81, 0.85)
+* Males: C statistic 0.83 (95% CI: 0.81, 0.85); Females: 0.83 (95% CI: 0.81, 0.85)
 
 *Calibration in temporal validation*
 
-  Calibration slopes in the validation data were 0.7859 among males and 0.8666 among females. 
+* Calibration slopes in the validation data were 0.7859 among males and 0.8666 among females. 
 
 Trial registration: ClinicalTrials.gov, no. NCT03155815
 
