@@ -32,7 +32,7 @@ These files capture all of the information needed to calcuate the model outcome 
 
 * *variables.csv* - Starting variable information, including labels
 
-* *variable-details.csv* - More infomration about starting variables, inlcuding information about continuous varibale units and valid range, and categorical variable categories and dummy variable specification
+* *variable-details.csv* - More information about starting variables, including information about continuous variable units and valid range, and categorical variable categories and dummy variable specification
 
 * *fine-and-gray.csv* - Model beta coefficients; DemPoRT uses a Fine and Gray subdistribution model
 
