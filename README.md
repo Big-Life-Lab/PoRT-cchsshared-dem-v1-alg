@@ -1,4 +1,4 @@
-# PBL-DemPoRT
+# DemPoRT
 **Dementia Population Risk Tool (DemPoRT)**
 
 The Dementia Population Risk Tool (DemPoRT) is a predictive algorithm for calculating 5-year dementia risk, designed specifically for population-level use.  DemPoRT is discriminating and well-calibrated across a wide range of population subgroups, despite using only self-reported risk factors (with a focus on health behaviours including smoking, diet and physical inactivity).
