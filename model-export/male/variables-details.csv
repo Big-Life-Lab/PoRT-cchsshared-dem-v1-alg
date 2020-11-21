@@ -1,6 +1,6 @@
 ﻿variable,   ,numValidCat,catLabel,catLabelLong,catValue,units,type,interval,notes
-Sex,Sexmale_cat,2,Male,m,1,NA,cat,NA,
-Sex,Sexfemale_caat,2,Female,f,2,NA,cat,NA,
+Sex,Sexmale_cat,2,Male,Male,1,NA,cat,NA,
+Sex,Sexfemale_caat,2,Female,Female,2,NA,cat,NA,
 Age_cont,NA,NA,NA,NA,NA,years,cont,"[55,105]",
 Ethnicity4_cat,EthnWhite4_cat,4,Caucasian,Caucasian,1,NA,cat,NA,
 Ethnicity4_cat,EthnSEAsian4_cat,4,South East Asian/Japanese/Chinese/Korean/Filipino,South East Asian/Japanese/Chinese/Korean/Filipino (Dummy variable of Ethnicity4_cat),2,NA,cat,NA,
