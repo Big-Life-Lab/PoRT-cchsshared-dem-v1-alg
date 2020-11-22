@@ -21,4 +21,4 @@ Mood_cat,Has a mood disorder,Has a mood disorder,General Health,Health Condition
 Hypertension_cat,Has hypertension,Has hypertension,General Health,Health Conditions,cat,NA,
 BMI_cont,Body mass index,Body mass index,General Health,BMI,cont,kg/m2,
 NeedHelp,Number of tasks needing assistance,Number of tasks needing assistance,Instrumental Activities of Daily Living,Instrumental Activities of Daily Living,cat,NA,
-Survey Cycle,Survey Cycle,CCHS Survey Cycle,Design,Design,cat,NA,
+SurveyCycle,Survey Cycle,CCHS Survey Cycle,Design,Design,cat,NA,
