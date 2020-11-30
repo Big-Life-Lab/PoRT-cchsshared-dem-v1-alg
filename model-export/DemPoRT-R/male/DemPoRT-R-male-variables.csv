@@ -2,7 +2,7 @@ variable,label,labelLong,section,subject,variableType,units,description
 Sex,Sex,Sex,About You,Sex,cat,NA,
 Age_cont,Age,Age in years,About You,Age,cont,years,
 Ethnicity4,Ethnicity,Ethnicity,Sociodemographic,Ethnicity,cat,NA,
-Multilingual_cat,Multilingual,Multilingual- can converse in more than one language,Sociodemographic,Ethnicity,cat,NA,
+Multilingual,Multilingual,Multilingual- can converse in more than one language,Sociodemographic,Ethnicity,cat,NA,
 Stress,Stress,Life stress,General Health,Stress,cat,NA,
 SRHealth,Self-rated Health,Self-rated Health,General Health,Self-rated Health,cat,NA,
 PackYears_cont,Packyears Smoking,Packyears of smoking,Health Behaviours,Smoking,cont,packyears,
