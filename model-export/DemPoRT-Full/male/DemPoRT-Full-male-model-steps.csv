@@ -1,6 +1,6 @@
 ﻿step,fileName,notes
 dummy,,
-center,,
-interaction,,
-rcs,,
-fine-and-gray,,
+center,DemPoRT-Full-male-center.csv,
+interaction,DemPoRT-Full-male-interactions.csv,
+rcs,DemPoRT-Full-male-rcs.csv,
+fine-and-gray,DemPoRT-Full-male-fine-and-gray.csv,
