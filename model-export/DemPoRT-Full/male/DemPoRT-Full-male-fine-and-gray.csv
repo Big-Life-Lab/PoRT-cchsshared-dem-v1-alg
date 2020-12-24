@@ -1,4 +1,5 @@
-﻿AgeC_rcs1,0.186948222
+﻿variable,coefficient
+AgeC_rcs1,0.186948222
 AgeC_rcs2,-0.208431344
 AgeC_rcs3,0.485770207
 AgeC_rcs4,-0.609083009
@@ -56,7 +57,13 @@ SurveyCycle3C_cat,-0.125196778
 SurveyCycle4C_cat,-0.479241155
 SurveyCycle5C_cat,-0.422986423
 SurveyCycle6C_cat,-0.525077076
-AgeCXPackYearsC_int,3.70137E-05
+NeedHelp1C_cat,0.446986662
+NeedHelp2C_cat,0.198684627
+NeedHelp3C_cat,0.329124216
+NeedHelp4C_cat,0.47855559
+NeedHelp5C_cat,0.810707843
+NeedHelp6C_cat,0.224236844
+AgeCXPackYearsC_int,3.70E-05
 AgeCXSmokeFormer5PlusC_int,-0.006966415
 AgeCXSmokeFormer0to5C_int,-0.005178473
 AgeCXSmokeCurrentC_int,-0.007886323
@@ -74,12 +81,6 @@ AgeCXHypertensionC_int,-0.008978076
 AgeCXCOPDC_int,-0.010828026
 AgeCXEpilepsyC_int,-0.002501313
 AgeCXBMIC_int,0.000463486
-NeedHelp1C_cat,0.446986662
-NeedHelp2C_cat,0.198684627
-NeedHelp3C_cat,0.329124216
-NeedHelp4C_cat,0.47855559
-NeedHelp5C_cat,0.810707843
-NeedHelp6C_cat,0.224236844
 AgeCXNeedHelp1C_int,-0.019958695
 AgeCXNeedHelp2C_int,-0.007936126
 AgeCXNeedHelp3C_int,-0.011612677
