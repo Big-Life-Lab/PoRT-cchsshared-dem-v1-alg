@@ -85,8 +85,8 @@ Q	N	stopdaily2	pastsmoke == 'dal'	What age did you stop smoking daily?		en			N		
 Q	L	tsq5	smokingstat == 'A3'	How long ago did you quit smoking completely?		en			N		1																	1																																																																																						1						1																	
 A	0	less5		5 year ago for less		en																																																																																																																																			
 A	0	more5		More than 5 years ago		en																																																																																																																																			
-Q	N	drk	alc == 'alc1' OR alc == 'alc2'	How many drinks did you have in the past week?		en			N		1																																																																																																							1				12																			
-Q	L	evdk	alc == 'alc3' AND sex == 'fem'	Have you ever had a drink?		en			N		1																	1																																																																																						1						1																	
+Q	N	drk	1	How many drinks of alcohol did you have in the past week?		en			N		1																																																																																																							1				12																			
+Q	L	evdk	drk == 0	Have you ever had a drink?		en			N		1																	1																																																																																						1						1																	
 A	0	evdk1		Yes		en																																																																																																																																			
 A	0	evdk2		No		en																																																																																																																																			
 Q	K	fv	1	How many times did you have each of the following in the past week?		en			N		1																																																																																										f1ae										|			1				12																			1
@@ -131,7 +131,7 @@ SQ	0	inches	1	inches		en
 Q	*	Connect3	1	cm-feetinches_feet {floor((cm*0.3937)/12)} 		en			N		1																																																																																																							1																							
 Q	*	Connect4	1	cm-feetinches_inches {round(((cm*0.3937008)/12 - floor((cm*0.3937008)/12))*12)}		en			N		1																																																																																																							1																							
 Q	*	Connect5	1	feetinches-cm {round(feetinches_feet*30.48 + feetinches_inches*2.54)}		en			N		1																																																																																																							1																							
-Q	M	cond	1	Which of the following conditions do you have?		en			N		1							1										1																		SQ010																																																																				1																							
+Q	M	cond	1	Which of the following conditions do you have?		en			N		1							1										1																		none																																																																				1																							
 SQ	0	stk	1	Stroke		en																																																																																																																																			
 SQ	0	hd	1	Heart disease		en																																																																																																																																			
 SQ	0	copd	1	Chronic obstructive pulmonary disease		en																																																																																																																																			
@@ -145,7 +145,7 @@ A	0	vs		Very strong		en
 A	0	ss		Somewhat strong		en																																																																																																																																			
 A	0	sw		Somewhat weak		en																																																																																																																																			
 A	0	vw		Very weak		en																																																																																																																																			
-Q	L	stress	1	Thinking about the amount of stress in your life, would you say that most days are:	Think a	en			N		1																	1																																																																																						1						1																	
+Q	L	stress	1	Thinking about the amount of stress in your life, would you say that most days are:		en			N		1																	1																																																																																						1						1																	
 A	0	naas		Not at all stressful		en																																																																																																																																			
 A	0	nvs		Not very stressful		en																																																																																																																																			
 A	0	abs		A bit stressful		en																																																																																																																																			
@@ -162,6 +162,6 @@ SQ	0	meals	1	Preparing meals		en
 SQ	0	errands	1	Getting to appointments and running errands such as shopping for groceries		en																																																																																																																																			
 SQ	0	hw	1	Doing everyday housework		en																																																																																																																																			
 SQ	0	pcare	1	Personal care such as washing, dressing, eating or taking medications		en																																																																																																																																			
-SQ	0	mov	1	Moving about inside the house?		en																																																																																																																																			
+SQ	0	mov	1	Moving about inside the house		en																																																																																																																																			
 SQ	0	finan	1	Looking after your personal finances such as making bank transactions or paying bills		en																																																																																																																																			
 SQ	0	none	1	None of the above		en																																																																																																																																			

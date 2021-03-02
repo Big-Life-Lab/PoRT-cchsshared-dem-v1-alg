@@ -601,7 +601,7 @@
     <gid><![CDATA[267]]></gid>
     <type><![CDATA[N]]></type>
     <title><![CDATA[drk]]></title>
-    <question><![CDATA[How many drinks did you have in the past week?]]></question>
+    <question><![CDATA[How many drinks of alcohol did you have in the past week?]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -610,7 +610,7 @@
     <language><![CDATA[en]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[alc == 'alc1' OR alc == 'alc2']]></relevance>
+    <relevance/>
     <modulename/>
    </row>
    <row>
@@ -910,7 +910,7 @@
     <language><![CDATA[en]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[alc == 'alc3' AND sex == 'fem']]></relevance>
+    <relevance><![CDATA[drk==0]]></relevance>
     <modulename/>
    </row>
    <row>
@@ -1166,7 +1166,7 @@
     <title><![CDATA[stress]]></title>
     <question><![CDATA[Thinking about the amount of stress in your life, would you say that most days are:]]></question>
     <preg/>
-    <help><![CDATA[Think a]]></help>
+    <help/>
     <other><![CDATA[N]]></other>
     <mandatory><![CDATA[N]]></mandatory>
     <question_order><![CDATA[11]]></question_order>
@@ -1174,6 +1174,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4979]]></qid>
@@ -1420,6 +1421,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4891]]></qid>
@@ -1435,6 +1437,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4892]]></qid>
@@ -1450,6 +1453,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4894]]></qid>
@@ -1465,6 +1469,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4895]]></qid>
@@ -1480,6 +1485,7 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
     <qid><![CDATA[4981]]></qid>
@@ -1584,7 +1590,7 @@
     <gid><![CDATA[269]]></gid>
     <type><![CDATA[T]]></type>
     <title><![CDATA[mov]]></title>
-    <question><![CDATA[Moving about inside the house?]]></question>
+    <question><![CDATA[Moving about inside the house]]></question>
     <other><![CDATA[N]]></other>
     <question_order><![CDATA[5]]></question_order>
     <language><![CDATA[en]]></language>
@@ -1663,7 +1669,7 @@
    <row>
     <qid><![CDATA[4855]]></qid>
     <attribute><![CDATA[exclude_all_others]]></attribute>
-    <value><![CDATA[SQ010]]></value>
+    <value><![CDATA[none]]></value>
    </row>
    <row>
     <qid><![CDATA[4858]]></qid>
