@@ -68,8 +68,8 @@ A	0	A1		Daily		en
 A	0	A2		Current occasional smoker		en																																																																																																																																			
 A	0	A3		Former smoker (daily or occasionally)		en																																																																																																																																			
 A	0	A4		Never smoked		en																																																																																																																																			
-Q	N	dailycig	smokingstat == 'A1'	On average, how many cigarettes do you smoke per day?		en	1		N		1																																																																																																							1				12																			
-Q	N	dailyage	smokingstat == 'A1'	What age did you start smoking daily?		en	1		N		1																																																																																																							1				12																			
+Q	N	dailycig	smokingstat == 'A1'	On average, how many cigarettes do you smoke per day?		en			N		1																																																																																																							1				12																			
+Q	N	dailyage	smokingstat == 'A1'	What age did you start smoking daily?		en			N		1																																																																																																							1				12																			
 Q	L	lessdaily	smokingstat == 'A2'	Have you smoked daily in the past?		en			N		1																	1																																																																																						1						1																	
 A	0	yless		Yes		en																																																																																																																																			
 A	0	nless		No		en																																																																																																																																			

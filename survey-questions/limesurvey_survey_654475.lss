@@ -716,7 +716,7 @@
     <type><![CDATA[N]]></type>
     <title><![CDATA[dailycig]]></title>
     <question><![CDATA[On average, how many cigarettes do you smoke per day?]]></question>
-    <preg><![CDATA[1]]></preg>
+    <preg/>
     <help/>
     <other><![CDATA[N]]></other>
     <mandatory><![CDATA[N]]></mandatory>
@@ -735,7 +735,7 @@
     <type><![CDATA[N]]></type>
     <title><![CDATA[dailyage]]></title>
     <question><![CDATA[What age did you start smoking daily?]]></question>
-    <preg><![CDATA[1]]></preg>
+    <preg/>
     <help/>
     <other><![CDATA[N]]></other>
     <mandatory><![CDATA[N]]></mandatory>
