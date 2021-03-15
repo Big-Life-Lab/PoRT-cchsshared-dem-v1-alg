@@ -59,7 +59,7 @@ Mood,Mood_cat,2,Mood disorder,Mood disorder,1,NA,cat,NA,DemPoRT_v0.1_lime,"Deriv
 Mood,NoMood_cat,2,No mood disorder,No mood disorder,2,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_mood, cond_none]",
 Hypertension,Hypertension_cat,2,Hypertension,Hypertension,1,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_hbp, cond_none]",
 Hypertension,NoHypertension_cat,2,No hypertension,No hypertension,2,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_hbp, cond_none]",
-Epilepsy,Epilespy_cat,2,Epilepsy,Epilepsy,1,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_epil, cond_none]",
+Epilepsy,Epilepsy_cat,2,Epilepsy,Epilepsy,1,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_epil, cond_none]",
 Epilepsy,NoEpilepsy_cat,2,No epilepsy,No epilepsy,2,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[cond_epil, cond_none]",
 BMI_cont,NA,NA,NA,NA,NA,kg/m2,cont,"[10,47]",DemPoRT_v0.1_lime,"DerivedVar::[lbs, kgs, cm, feetinches_feet, feetinches_inches]",
 NeedHelp,NeedHelp0_cat,7,0,Does not need help,0,NA,cat,NA,DemPoRT_v0.1_lime,"DerivedVar::[needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none]",

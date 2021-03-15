@@ -40,7 +40,7 @@ Stroke_cat,0.0351,StrokeC_cat
 Diabetes_cat,0.166,DiabetesC_cat
 Mood_cat,0.0569,MoodC_cat
 Hypertension_cat,0.388,HypertensionC_cat
-Epilespy_cat,0.00526,EpilespyC_cat
+Epilepsy_cat,0.00526,EpilespyC_cat
 BMI_cont,27.1,BMIC_cont
 NeedHelp1_cat,0.052,NeedHelp1C_cat
 NeedHelp2_cat,0.0238,NeedHelp2C_cat
