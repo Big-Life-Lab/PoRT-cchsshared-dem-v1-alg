@@ -83,7 +83,7 @@ Q	N	dailyage3	pastsmoke == 'dal'	What age did you start smoking daily?		en			N		
 Q	N	dailycig4	pastsmoke == 'dal'	On average, how many cigarettes did you smoke per day?		en			N		1																																																																																																							1				12																			
 Q	N	stopdaily2	pastsmoke == 'dal'	What age did you stop smoking daily?		en			N		1																																																																																																							1				12																			
 Q	L	tsq5	smokingstat == 'A3'	How long ago did you quit smoking completely?		en			N		1																	1																																																																																						1						1																	
-A	0	less5		5 year ago for less		en																																																																																																																																			
+A	0	less5		5 years ago or less		en																																																																																																																																			
 A	0	more5		More than 5 years ago		en																																																																																																																																			
 Q	N	drk	1	How many drinks of alcohol did you have in the past week?		en			N		1																																																																																																							1				12																			
 Q	L	evdk	drk == 0	Have you ever had a drink?		en			N		1																	1																																																																																						1						1																	
@@ -151,7 +151,7 @@ A	0	nvs		Not very stressful		en
 A	0	abs		A bit stressful		en																																																																																																																																			
 A	0	qabs		Quite a bit stressful		en																																																																																																																																			
 A	0	es		Extremely stressful		en																																																																																																																																			
-Q	L	srhealth	1	In general, would you say your life is:		en			N		1																	1																																																																																						1						1																	
+Q	L	srhealth	1	In general, would you say your health is:		en			N		1																	1																																																																																						1						1																	
 A	0	ex		Excellent		en																																																																																																																																			
 A	0	vg		Very good		en																																																																																																																																			
 A	0	go		Good		en																																																																																																																																			

@@ -388,7 +388,7 @@
    <row>
     <qid><![CDATA[4987]]></qid>
     <code><![CDATA[less5]]></code>
-    <answer><![CDATA[5 year ago for less]]></answer>
+    <answer><![CDATA[5 years ago or less]]></answer>
     <sortorder><![CDATA[1]]></sortorder>
     <assessment_value><![CDATA[0]]></assessment_value>
     <language><![CDATA[en]]></language>
@@ -1183,7 +1183,7 @@
     <gid><![CDATA[269]]></gid>
     <type><![CDATA[L]]></type>
     <title><![CDATA[srhealth]]></title>
-    <question><![CDATA[In general, would you say your life is:]]></question>
+    <question><![CDATA[In general, would you say your health is:]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
