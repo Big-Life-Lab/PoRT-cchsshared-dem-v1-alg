@@ -1,0 +1,4 @@
+﻿fileType,filePath
+variables,../DemPoRT-full-variables.csv
+variable-details,../DemPoRT-full-variable-details.csv
+model-steps,./DemPoRT-full-male-model-steps.csv
