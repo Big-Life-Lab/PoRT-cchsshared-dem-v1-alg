@@ -39,6 +39,12 @@ MoodC_cat,0.18723
 HypertensionC_cat,-0.08289
 BMIC_rcs1,-0.01979
 BMIC_rcs2,0.00922
+NeedHelp1C_cat,0.45002
+NeedHelp2C_cat,0.20262
+NeedHelp3C_cat,0.33381
+NeedHelp4C_cat,0.47548
+NeedHelp5C_cat,0.81600
+NeedHelp6C_cat,0.23808
 SurveyCycle2C_cat,-0.17033
 SurveyCycle3C_cat,-0.12998
 SurveyCycle4C_cat,-0.48323
@@ -61,12 +67,6 @@ AgeCXDiabetesC_int,-0.00962
 AgeCXMoodC_int,-0.01159
 AgeCXHypertensionC_int,-0.00898
 AgeCXBMIC_int,0.00045
-NeedHelp1C_cat,0.45002
-NeedHelp2C_cat,0.20262
-NeedHelp3C_cat,0.33381
-NeedHelp4C_cat,0.47548
-NeedHelp5C_cat,0.81600
-NeedHelp6C_cat,0.23808
 AgeCXNeedHelp1C_int,-0.02014
 AgeCXNeedHelp2C_int,-0.00813
 AgeCXNeedHelp3C_int,-0.01132
