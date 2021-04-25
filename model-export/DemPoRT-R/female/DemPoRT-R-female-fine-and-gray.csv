@@ -53,7 +53,7 @@ AgeCXPackYearsC_int,-0.000155971
 AgeCXSmokeFormer5PlusC_int,0.002122531
 AgeCXSmokeFormer0to5C_int,-0.007432523
 AgeCXSmokeCurrentC_int,-0.01222868
-AgeCXDrinksLastWeekC_int,3.86057E-05
+AgeCXDrinksLastWeekC_int,3.86E-05
 AgeCXFormerDrinkerC_int,-0.005918187
 AgeCXFruitVegC_int,0.001669135
 AgeCXJuiceC_int,-0.007208772
