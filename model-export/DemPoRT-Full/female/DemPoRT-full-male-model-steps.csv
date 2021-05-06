@@ -1,0 +1,7 @@
+﻿step,fileType,filePath,notes
+dummy,,".,/DemPoRT-full-dummy.csv",
+center,,./DemPoRT-full-male-center.csv,
+interaction,,../DemPoRT-full-interactions.csv,
+rcs,,./DemPoRT-full-male-rcs.csv,
+fine-and-gray,beta-coefficients,./DemPoRT-full-male-beta-coefficients.csv,
+fine-and-gray,baseline-hazards,./DemPoRT-full-male-baseline-hazards.csv,
