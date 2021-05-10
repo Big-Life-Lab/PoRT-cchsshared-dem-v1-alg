@@ -27,4 +27,4 @@ COPD_cat,Has COPD,"Has COPD, emphysema or chronic bronchitis",General Health,Hea
 Epilepsy_cat,Epilepsy,Has epilepsy,General Health,Health Conditions,cat,N/A,,,
 BMI_cont,Body mass index,Body mass index,General Health,BMI,cont,kg/m2,,,
 NeedHelp,Number of tasks needing assistance,Number of tasks needing assistance,General Health,Instrumental Activities of Daily Living,cat,N/A,,,
-Survey Cycle,Survey Cycle,CCHS Survey Cycle,Design,Design,cat,N/A,,,
+SurveyCycle,Survey Cycle,CCHS Survey Cycle,Design,Design,cat,N/A,,,
