@@ -206,7 +206,7 @@ BMI_cont.fun <-
     formatted_kgs <- kgs
     if (missing_bmi == TRUE) {
       formatted_kgs <- NA
-    } if (is.na(kgs)) {
+    } else if (is.na(kgs)) {
       formatted_kgs <- NA
     } else {
       formatted_kgs <- round((lbs / 2.2046), 2)
