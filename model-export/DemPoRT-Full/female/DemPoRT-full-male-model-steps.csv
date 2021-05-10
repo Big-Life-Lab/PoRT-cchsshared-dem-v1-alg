@@ -1,5 +1,5 @@
-﻿step,fileType,filePath,notes
-dummy,,".,/DemPoRT-full-dummy.csv",
+step,fileType,filePath,notes
+dummy,,"../DemPoRT-full-dummy.csv",
 center,,./DemPoRT-full-male-center.csv,
 interaction,,../DemPoRT-full-interactions.csv,
 rcs,,./DemPoRT-full-male-rcs.csv,
