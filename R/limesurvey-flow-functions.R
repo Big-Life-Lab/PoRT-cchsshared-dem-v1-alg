@@ -9,7 +9,7 @@ TypeOfSmoker2.fun <- function(smokingstat, lessdaily, pastsmoke) {
     return(1)
   }
   # Current occasional smoker - daily in past
-  else if (TypeOfSmoker2 == 'A2' & lessdaily == 'yless') {
+  else if (smokingstat == 'A2' & lessdaily == 'yless') {
     return(2)
   }
   # Current occasional smoker - never daily
