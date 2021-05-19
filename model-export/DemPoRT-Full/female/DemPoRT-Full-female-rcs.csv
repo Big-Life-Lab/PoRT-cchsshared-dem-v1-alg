@@ -1,9 +1,9 @@
 variable,rcsVariables,knots
-AgeC_rcs1,AgeC_rcs1;AgeC_rcs2;AgeC_rcs3;AgeC_rcs4,-12.8;-7.8;-0.8;6.2;16.2
-PackYearsC_rcs1,PackYearsC_rcs1;PackYearsC_rcs2,-11.3;-8.8;28.7
-DrinksLastWeekC_rcs1,DrinksLastWeekC_rcs1;DrinksLastWeek_rcs2,-1.92;0.08;5.08
-FruitVegC_rcs1,FruitVegC_rcs1;FruitVegC_rcs2,-2.69;-0.29;3.01
-JuiceC_rcs1,JuiceC_rcs1;JuiceC_rcs2,-0.757;0.243;1.243
-PotatoC_rcs1,PotatoC_rcs1;PotatoC_rcs2,-0.345;-0.045;0.555
-PhysicalActivityC_rcs1,PhysicalActivityC_rcs1;PhysicalActivityC_rcs2,-1.51;-0.11;2.49
-BMIC_rcs1,BMIC_rcs1;BMIC_rcs2,-5.76;-0.87;6.52
+AgeC_cont,AgeC_rcs1;AgeC_rcs2;AgeC_rcs3;AgeC_rcs4,-12.8;-7.8;-0.8;6.2;16.2
+PackYearsC_cont,PackYearsC_rcs1;PackYearsC_rcs2,-11.3;-8.8;28.7
+DrinksLastWeekC_cont,DrinksLastWeekC_rcs1;DrinksLastWeek_rcs2,-1.92;0.08;5.08
+FruitVegC_cont,FruitVegC_rcs1;FruitVegC_rcs2,-2.69;-0.29;3.01
+JuiceC_cont,JuiceC_rcs1;JuiceC_rcs2,-0.757;0.243;1.243
+PotatoC_cont,PotatoC_rcs1;PotatoC_rcs2,-0.345;-0.045;0.555
+PhysicalActivityC_cont,PhysicalActivityC_rcs1;PhysicalActivityC_rcs2,-1.51;-0.11;2.49
+BMIC_cont,BMIC_rcs1;BMIC_rcs2,-5.76;-0.87;6.52
