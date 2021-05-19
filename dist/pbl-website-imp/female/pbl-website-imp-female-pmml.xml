@@ -1,0 +1,4180 @@
+<PMML version="4.4" xmlns="http://www.dmg.org/PMML-4_4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Header>
+  <Application name="bllflow" version="0.1.0"/>
+ </Header>
+ <DataDictionary numberOfFields="52">
+  <DataField name="sex" displayName="Sex" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Sex:"/>
+   <Value value="male" displayValue="Male" property="valid"/>
+   <Value value="female" displayValue="Female" property="valid"/>
+  </DataField>
+  <DataField name="age" displayName="Age" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Age"/>
+   <Interval closure="closedClosed" leftMargin="55" rightMargin="100" property="valid"/>
+  </DataField>
+  <DataField name="eth" displayName="Ethnicity" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="What is your cultural or racial background?"/>
+   <Value value="Wh" displayValue="Caucasian" property="valid"/>
+   <Value value="SEA" displayValue="South East Asian/Japanese/Chinese/Korean/Filipino (Dummy variable of Ethnicity4_cat)" property="valid"/>
+   <Value value="Oth" displayValue="Other/Multiple Origin/Unknown/Black/Latin American/AborigiN/Al  (Dummy variable of Ethnicity4_cat)" property="valid"/>
+   <Value value="SA" displayValue="South Asian/West Asian/Arab  (Dummy variable of Ethnicity4_cat)" property="valid"/>
+  </DataField>
+  <DataField name="immig" displayName="Immigrant" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Were you born a Canadian citizen?"/>
+   <Value value="N" displayValue="Immigrant" property="valid"/>
+   <Value value="Y" displayValue="Not an immigrant" property="valid"/>
+  </DataField>
+  <DataField name="edu" displayName="Education" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="What is your education level?"/>
+   <Value value="lhs" displayValue="Less than secondary school" property="valid"/>
+   <Value value="hs" displayValue="Secondary school graduation" property="valid"/>
+   <Value value="sps" displayValue="Some postsecondary" property="valid"/>
+   <Value value="ps" displayValue="Postsecondary graduation" property="valid"/>
+  </DataField>
+  <DataField name="ms" displayName="Marital Status" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="What is your marital status?"/>
+   <Value value="marr" displayValue="Now married / common-law" property="valid"/>
+   <Value value="div" displayValue="Separated / divorced" property="valid"/>
+   <Value value="wid" displayValue="Widowed" property="valid"/>
+   <Value value="sing" displayValue="Single" property="valid"/>
+  </DataField>
+  <DataField name="dep" displayName="Deprivation" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="What is the level of social support and wealth in your neighbourhood compared to the rest of your country?"/>
+   <Value value="abav" displayValue="Above Average" property="valid"/>
+   <Value value="av" displayValue="Average" property="valid"/>
+   <Value value="bav" displayValue="Below Average" property="valid"/>
+  </DataField>
+  <DataField name="lang" displayName="Multilingual" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Do you speak more than one language?"/>
+   <Value value="Y" displayValue="Yes" property="valid"/>
+   <Value value="N" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="belong" displayName="Belong" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="How would you describe your sense of belonging to your local community?"/>
+   <Value value="vs" displayValue="Very strong" property="valid"/>
+   <Value value="ss" displayValue="Somewhat strong" property="valid"/>
+   <Value value="sw" displayValue="Somewhat weak" property="valid"/>
+   <Value value="vw" displayValue="Very weak" property="valid"/>
+  </DataField>
+  <DataField name="stress" displayName="Stress" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Thinking about the amount of stress in your life, would you say that most days are:"/>
+   <Value value="naas" displayValue="Not at all stressful" property="valid"/>
+   <Value value="nvs" displayValue="Not very stressful" property="valid"/>
+   <Value value="abs" displayValue="A bit stressful" property="valid"/>
+   <Value value="qabs" displayValue="Quite a bit stressful" property="valid"/>
+   <Value value="es" displayValue="Extreamly stressful" property="valid"/>
+  </DataField>
+  <DataField name="srhealth" displayName="SRHealth" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="In general, would you say your health is:"/>
+   <Value value="po" displayValue="Poor self-rated health" property="valid"/>
+   <Value value="fa" displayValue="Fair self-rated health" property="valid"/>
+   <Value value="go" displayValue="Good self-rated health" property="valid"/>
+   <Value value="vg" displayValue="Very good self-rated health" property="valid"/>
+   <Value value="ex" displayValue="Excellent self-rated health" property="valid"/>
+  </DataField>
+  <DataField name="tsq5" displayName="How long ago did you quit smoking completely?" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="How long ago did you quit smoking completely?"/>
+   <Value value="less5" displayValue="5 years ago or less" property="valid"/>
+   <Value value="more5" displayValue="More than 5 years ago" property="valid"/>
+  </DataField>
+  <DataField name="smokingstat" displayName="Smoking Status" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="What is your current smoking status?"/>
+   <Value value="A1" displayValue="Daily" property="valid"/>
+   <Value value="A2" displayValue="Current occasional smoker" property="valid"/>
+   <Value value="A3" displayValue="Former smoker (daily or occasionally)" property="valid"/>
+   <Value value="A4" displayValue="Never smoked" property="valid"/>
+  </DataField>
+  <DataField name="lessdaily" displayName="Have you smoked daily in the past?" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Have you smoked daily in the past?"/>
+   <Value value="yless" displayValue="Yes" property="valid"/>
+   <Value value="nless" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="pastsmoke" displayName="In the past, did you smoke daily?" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="In the past, did you smoke daily?"/>
+   <Value value="dal" displayValue="Daily" property="valid"/>
+   <Value value="dal2" displayValue="Less than daily" property="valid"/>
+  </DataField>
+  <DataField name="dailyage" displayName="Age Start Smoking Daily" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="What age did you start smoking daily"/>
+  </DataField>
+  <DataField name="dailycig" displayName="Average cigarettes smoked per day" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="On average, how many cigarettes do you smoke per day?"/>
+  </DataField>
+  <DataField name="stopdaily" displayName="What age did you stop smoking daily?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="What age did you stop smoking daily?"/>
+  </DataField>
+  <DataField name="dailyage2" displayName="What age did you start smoking daily?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="What age did you start smoking daily?"/>
+  </DataField>
+  <DataField name="dailycig3" displayName="On average, how many cigarettes did you smoke per day?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="On average, how many cigarettes did you smoke per day?"/>
+  </DataField>
+  <DataField name="stopdaily2" displayName="What age did you stop smoking daily?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="What age did you stop smoking daily?"/>
+  </DataField>
+  <DataField name="dailyage3" displayName="What age did you start smoking daily?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="What age did you start smoking daily?"/>
+  </DataField>
+  <DataField name="dailycig4" displayName="On average, how many cigarettes did you smoke per day?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="On average, how many cigarettes did you smoke per day?"/>
+  </DataField>
+  <DataField name="drk" displayName="How many drinks of alcohol did you have in the past week?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="How many drinks of alcohol did you have in the past week?"/>
+  </DataField>
+  <DataField name="evdk" displayName="Have you ever had a drink?" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Have you ever had a drink?"/>
+   <Value value="evdk1" displayValue="Yes" property="valid"/>
+   <Value value="evdk2" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="fv_fruit1" displayName="Times had fruit last week" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Times had fruit last week"/>
+  </DataField>
+  <DataField name="fv_veg1" displayName="Times had vegetables last week" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Times had vegetables last week"/>
+  </DataField>
+  <DataField name="fv_pot1" displayName="Times had potatoes last week" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Times had potatoes last week"/>
+  </DataField>
+  <DataField name="fv_juice1" displayName="Times had juice last week" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Times had juice last week"/>
+  </DataField>
+  <DataField name="vigact" displayName="In the past week, how much time did you spend doing vigorous-intensity physical activity (e.g., running)?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="In the past week, how much time did you spend doing vigorous-intensity physical activity (e.g., running)?"/>
+  </DataField>
+  <DataField name="modact" displayName="In the past week, how much time did you spend doing moderate-intensity physical activity (e.g., rollerblading) or sports that are vigorous but not continuous intensity (e.g., ice hockey, soccer, basketball, volleyball)?" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="In the past week, how much time did you spend doing moderate-intensity physical activity (e.g., rollerblading) or sports that are vigorous but not continuous intensity (e.g., ice hockey, soccer, basketball, volleyball)?"/>
+  </DataField>
+  <DataField name="ligact" displayName="In the past week, how much time did you spend doing light-intensity physical activities? (e.g., walking, cycling, gardening, exercise class, golfing, bowling, skating, fishing, baseball, tennis)" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="In the past week, how much time did you spend doing light-intensity physical activities? (e.g., walking, cycling, gardening, exercise class, golfing, bowling, skating, fishing, baseball, tennis)"/>
+  </DataField>
+  <DataField name="cond_hd" displayName="Which of the following conditions do you have? Heart Disease" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Heart Disease"/>
+   <Value value="Y" displayValue="Heart disease" property="valid"/>
+   <Value value="N" displayValue="No heart disease" property="valid"/>
+  </DataField>
+  <DataField name="cond_stk" displayName="Which of the following conditions do you have? Stroke" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Stroke"/>
+   <Value value="Y" displayValue="Stroke" property="valid"/>
+   <Value value="N" displayValue="No Stroke" property="valid"/>
+  </DataField>
+  <DataField name="cond_diab" displayName="Which of the following conditions do you have? Diabetes" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Diabetes"/>
+   <Value value="Y" displayValue="Diabetes" property="valid"/>
+   <Value value="N" displayValue="No Diabetes" property="valid"/>
+  </DataField>
+  <DataField name="cond_mood" displayName="Which of the following conditions do you have? Mood Disorder" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Mood Disorder"/>
+   <Value value="Y" displayValue="Mood disorder" property="valid"/>
+   <Value value="N" displayValue="No mood disorder" property="valid"/>
+  </DataField>
+  <DataField name="hbp" displayName="Which of the following conditions do you have? Hypertension" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Hypertension"/>
+   <Value value="Y" displayValue="Hypertension" property="valid"/>
+   <Value value="N" displayValue="No hypertension" property="valid"/>
+  </DataField>
+  <DataField name="cond_copd" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="COPD" property="valid"/>
+   <Value value="N" displayValue="No COPD" property="valid"/>
+  </DataField>
+  <DataField name="epil" displayName="Which of the following conditions do you have? Epilepsy" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Epilepsy"/>
+   <Value value="Y" displayValue="Epilepsy" property="valid"/>
+   <Value value="N" displayValue="No epilepsy" property="valid"/>
+  </DataField>
+  <DataField name="lbs" displayName="Weight in Pounds" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Weight in Pounds"/>
+  </DataField>
+  <DataField name="kgs" displayName="Weight in kilograms" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Weight in kilograms"/>
+  </DataField>
+  <DataField name="cm" displayName="Height in centimetres" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Height in centimetres"/>
+  </DataField>
+  <DataField name="feetinches_feet" displayName="Feet portion of height" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Feet portion of height"/>
+  </DataField>
+  <DataField name="feetinches_inches" displayName="Inches portion of height" optype="continuous" dataType="float">
+   <Extension name="variableStartLabel" value="Inches portion of height"/>
+  </DataField>
+  <DataField name="needhelp_meals" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Meals" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Meals"/>
+   <Value value="Y" displayValue="Needs help with meals" property="valid"/>
+   <Value value="N" displayValue="Does not need help with mea;s" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_errands" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Errands" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Errands"/>
+   <Value value="Y" displayValue="Needs help with errands" property="valid"/>
+   <Value value="N" displayValue="Does not need help with errands" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_hw" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Housework" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Housework"/>
+   <Value value="Y" displayValue="Needs help with house work" property="valid"/>
+   <Value value="N" displayValue="Does not need help with housework" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_pcare" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Personal care such as washing, dressing, eating or taking medications" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Personal care such as washing, dressing, eating or taking medications"/>
+   <Value value="Y" displayValue="Needs help with personal care" property="valid"/>
+   <Value value="N" displayValue="Does not need help with personal care" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_mov" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Moving about inside the house" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Moving about inside the house"/>
+   <Value value="Y" displayValue="Yes" property="valid"/>
+   <Value value="N" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_finan" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Looking after your personal finances such as making bank transactions or paying bills" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? Looking after your personal finances such as making bank transactions or paying bills"/>
+   <Value value="Y" displayValue="Yes" property="valid"/>
+   <Value value="N" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="needhelp_none" displayName="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? None" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities? None"/>
+   <Value value="Y" displayValue="Yes" property="valid"/>
+   <Value value="N" displayValue="No" property="valid"/>
+  </DataField>
+  <DataField name="surveyCycle" displayName="Survey Cycle" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value="Survey Cycle"/>
+   <Value value="1" displayValue="Survey Cycle" property="valid"/>
+   <Value value="2" displayValue="Survey Cycle" property="valid"/>
+   <Value value="3" displayValue="Survey Cycle" property="valid"/>
+   <Value value="4" displayValue="Survey Cycle" property="valid"/>
+   <Value value="5" displayValue="Survey Cycle" property="valid"/>
+   <Value value="6" displayValue="Survey Cycle" property="valid"/>
+  </DataField>
+  <DataField name="time" displayName="time of predicted probability" optype="continuous" dataType="float">
+   <Extension name="units" value="years"/>
+   <Extension name="variableStartLabel" value=""/>
+   <Interval closure="closedClosed" leftMargin="copy" rightMargin="NA::b" property="valid"/>
+  </DataField>
+ </DataDictionary>
+ <TransformationDictionary>
+  <DerivedField name="Sex" displayName="Sex" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Sex"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="sex"/>
+     <Constant dataType="string">male</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="sex"/>
+      <Constant dataType="string">female</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Male">
+    <Extension name="catLabelLong" value="Male"/>
+   </Value>
+   <Value value="2" displayValue="Female">
+    <Extension name="catLabelLong" value="Female"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Age_cont" displayName="Age" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Age in years"/>
+   <Extension name="units" value="years"/>
+   <Apply function="if">
+    <Apply function="and">
+     <Apply function="or">
+      <Apply function="greaterThan">
+       <FieldRef field="age"/>
+       <Constant dataType="integer">55</Constant>
+      </Apply>
+      <Apply function="equal">
+       <FieldRef field="age"/>
+       <Constant dataType="integer">55</Constant>
+      </Apply>
+     </Apply>
+     <Apply function="or">
+      <Apply function="lessThan">
+       <FieldRef field="age"/>
+       <Constant dataType="integer">100</Constant>
+      </Apply>
+      <Apply function="equal">
+       <FieldRef field="age"/>
+       <Constant dataType="integer">100</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+    <FieldRef field="age"/>
+    <Constant dataType="string">NA::b</Constant>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Ethnicity4" displayName="Ethnicity" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Ethnicity"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="eth"/>
+     <Constant dataType="string">Wh</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="eth"/>
+      <Constant dataType="string">SEA</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="eth"/>
+       <Constant dataType="string">Oth</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="eth"/>
+        <Constant dataType="string">SA</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Constant dataType="string">NA::b</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Caucasian">
+    <Extension name="catLabelLong" value="Caucasian"/>
+   </Value>
+   <Value value="2" displayValue="South East Asian/Japanese/Chinese/Korean/Filipino">
+    <Extension name="catLabelLong" value="South East Asian/Japanese/Chinese/Korean/Filipino (Dummy variable of Ethnicity4_cat)"/>
+   </Value>
+   <Value value="3" displayValue="Other/Multiple Origin/Unknown/Black/Latin American/AborigiN/Al">
+    <Extension name="catLabelLong" value="Other/Multiple Origin/Unknown/Black/Latin American/AborigiN/Al  (Dummy variable of Ethnicity4_cat)"/>
+   </Value>
+   <Value value="4" displayValue="South Asian/West Asian/Arab">
+    <Extension name="catLabelLong" value="South Asian/West Asian/Arab  (Dummy variable of Ethnicity4_cat)"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Immigrant" displayName="Immigration Status" optype="cat" dataType="string">
+   <Extension name="labelLong" value=""/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="immig"/>
+     <Constant dataType="string">N</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="immig"/>
+      <Constant dataType="string">Y</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::B</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Immigrant">
+    <Extension name="catLabelLong" value="Immigrant"/>
+   </Value>
+   <Value value="2" displayValue="Not an immigrant">
+    <Extension name="catLabelLong" value="Not an immigrant"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Edu4" displayName="Education" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Education"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="edu"/>
+     <Constant dataType="string">lhs</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="edu"/>
+      <Constant dataType="string">hs</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="edu"/>
+       <Constant dataType="string">sps</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="edu"/>
+        <Constant dataType="string">ps</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Constant dataType="string">NA::b</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Less than secondary school">
+    <Extension name="catLabelLong" value="Less than secondary school"/>
+   </Value>
+   <Value value="2" displayValue="Secondary school graduation">
+    <Extension name="catLabelLong" value="Secondary school graduation"/>
+   </Value>
+   <Value value="3" displayValue="Some postsecondary">
+    <Extension name="catLabelLong" value="Some postsecondary"/>
+   </Value>
+   <Value value="4" displayValue="Postsecondary graduation">
+    <Extension name="catLabelLong" value="Postsecondary graduation"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="MS4" displayName="Marital Status" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Marital Status"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="ms"/>
+     <Constant dataType="string">marr</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="ms"/>
+      <Constant dataType="string">div</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="ms"/>
+       <Constant dataType="string">wid</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="ms"/>
+        <Constant dataType="string">sing</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Constant dataType="string">NA::b</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Now married / common-law">
+    <Extension name="catLabelLong" value="Now married / common-law"/>
+   </Value>
+   <Value value="2" displayValue="Separated / divorced">
+    <Extension name="catLabelLong" value="Separated / divorced"/>
+   </Value>
+   <Value value="3" displayValue="Widowed">
+    <Extension name="catLabelLong" value="Widowed"/>
+   </Value>
+   <Value value="4" displayValue="Single">
+    <Extension name="catLabelLong" value="Single"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Deprivation" displayName="Neighbourhood Deprivation" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Neighbourhood deprivation"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="dep"/>
+     <Constant dataType="string">abav</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="dep"/>
+      <Constant dataType="string">av</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="dep"/>
+       <Constant dataType="string">bav</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Constant dataType="string">NA::b</Constant>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Low">
+    <Extension name="catLabelLong" value="Low neightbourhood material deprivation"/>
+   </Value>
+   <Value value="2" displayValue="Moderate">
+    <Extension name="catLabelLong" value="Moderate neighbourhood material deprivation"/>
+   </Value>
+   <Value value="3" displayValue="High">
+    <Extension name="catLabelLong" value="High neighbourhood material deprivation"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Multilingual" displayName="Multilingual" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Multilingual- can converse in more than one language"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="lang"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="lang"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Multilingual">
+    <Extension name="catLabelLong" value="Multilingual"/>
+   </Value>
+   <Value value="2" displayValue="Not multilingual">
+    <Extension name="catLabelLong" value="Not multilingual"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Belong" displayName="Sense of Belonging" optype="cat" dataType="string">
+   <Extension name="labelLong" value=""/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="belong"/>
+     <Constant dataType="string">vs</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="belong"/>
+      <Constant dataType="string">ss</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="belong"/>
+       <Constant dataType="string">sw</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="belong"/>
+        <Constant dataType="string">vw</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Constant dataType="string">NA::b</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Very strong">
+    <Extension name="catLabelLong" value="Very strong"/>
+   </Value>
+   <Value value="2" displayValue="Somewhat strong">
+    <Extension name="catLabelLong" value="Somewhat strong"/>
+   </Value>
+   <Value value="3" displayValue="Somewhat weak">
+    <Extension name="catLabelLong" value="Somewhat weak"/>
+   </Value>
+   <Value value="4" displayValue="Very weak">
+    <Extension name="catLabelLong" value="Very weak"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Stress" displayName="Stress" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Life stress"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="stress"/>
+     <Constant dataType="string">naas</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="stress"/>
+      <Constant dataType="string">nvs</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="stress"/>
+       <Constant dataType="string">abs</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="stress"/>
+        <Constant dataType="string">qabs</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Apply function="if">
+        <Apply function="equal">
+         <FieldRef field="stress"/>
+         <Constant dataType="string">es</Constant>
+        </Apply>
+        <Constant dataType="integer">5</Constant>
+        <Constant dataType="string">NA::b</Constant>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Not at all stressful">
+    <Extension name="catLabelLong" value="Not at all stressful"/>
+   </Value>
+   <Value value="2" displayValue="Not very stressful">
+    <Extension name="catLabelLong" value="Not very stressful"/>
+   </Value>
+   <Value value="3" displayValue="A bit stressful">
+    <Extension name="catLabelLong" value="A bit stressful"/>
+   </Value>
+   <Value value="4" displayValue="Quite a bit stressful">
+    <Extension name="catLabelLong" value="Quite a bit stressful "/>
+   </Value>
+   <Value value="5" displayValue="Extreamly stressful">
+    <Extension name="catLabelLong" value="Extreamly stressful"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="SRHealth" displayName="Self-rated Health" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Self-rated Health"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="srhealth"/>
+     <Constant dataType="string">po</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="srhealth"/>
+      <Constant dataType="string">fa</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="srhealth"/>
+       <Constant dataType="string">go</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="srhealth"/>
+        <Constant dataType="string">vg</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Apply function="if">
+        <Apply function="equal">
+         <FieldRef field="srhealth"/>
+         <Constant dataType="string">ex</Constant>
+        </Apply>
+        <Constant dataType="integer">5</Constant>
+        <Constant dataType="string">NA::b</Constant>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Poor">
+    <Extension name="catLabelLong" value="Poor self-rated health"/>
+   </Value>
+   <Value value="2" displayValue="Fair">
+    <Extension name="catLabelLong" value="Fair self-rated health"/>
+   </Value>
+   <Value value="3" displayValue="Good">
+    <Extension name="catLabelLong" value="Good self-rated health"/>
+   </Value>
+   <Value value="4" displayValue="Very Good">
+    <Extension name="catLabelLong" value="Very good self-rated health"/>
+   </Value>
+   <Value value="5" displayValue="Excellent">
+    <Extension name="catLabelLong" value="Excellent self-rated health"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="SmokeSimple" displayName="Smoking Status" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Smoking status"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="SmokeSimple.fun">
+    <FieldRef field="TypeOfSmoker2"/>
+    <FieldRef field="tsq5_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Non-smoker">
+    <Extension name="catLabelLong" value="Non-smoker"/>
+   </Value>
+   <Value value="2" displayValue="Former smoker 5+ years since quit">
+    <Extension name="catLabelLong" value="Former smoker 5+ years since quit"/>
+   </Value>
+   <Value value="3" displayValue="Former smoker &lt;5 years since quit">
+    <Extension name="catLabelLong" value="Former smoker &lt;5 years since quit"/>
+   </Value>
+   <Value value="4" displayValue="Current smoker">
+    <Extension name="catLabelLong" value="Current smoker"/>
+   </Value>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="TypeOfSmoker2" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="TypeOfSmoker2.fun">
+    <FieldRef field="smokingstat_mut"/>
+    <FieldRef field="lessdaily_mut"/>
+    <FieldRef field="pastsmoke_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Current daily smoker">
+    <Extension name="catLabelLong" value="Current daily smoker"/>
+   </Value>
+   <Value value="2" displayValue="Curent occasional smoker - daily in past">
+    <Extension name="catLabelLong" value="Curent occasional smoker - daily in past"/>
+   </Value>
+   <Value value="3" displayValue="Current occasional smoker - never daily">
+    <Extension name="catLabelLong" value="Current occasional smoker - never daily"/>
+   </Value>
+   <Value value="4" displayValue="Former smoker - daily in past">
+    <Extension name="catLabelLong" value="Former smoker - daily in past"/>
+   </Value>
+   <Value value="5" displayValue="Former smoker never daily">
+    <Extension name="catLabelLong" value="Former smoker never daily"/>
+   </Value>
+   <Value value="6" displayValue="Non-smoker">
+    <Extension name="catLabelLong" value="Non-smoker"/>
+   </Value>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="tsq5_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="tsq5"/>
+     <Constant dataType="string">less5</Constant>
+    </Apply>
+    <Constant dataType="string">less5</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="tsq5"/>
+      <Constant dataType="string">more5</Constant>
+     </Apply>
+     <Constant dataType="string">more5</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="smokingstat_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="smokingstat"/>
+     <Constant dataType="string">A1</Constant>
+    </Apply>
+    <Constant dataType="string">A1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="smokingstat"/>
+      <Constant dataType="string">A2</Constant>
+     </Apply>
+     <Constant dataType="string">A2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="smokingstat"/>
+       <Constant dataType="string">A3</Constant>
+      </Apply>
+      <Constant dataType="string">A3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="smokingstat"/>
+        <Constant dataType="string">A4</Constant>
+       </Apply>
+       <Constant dataType="string">A4</Constant>
+       <Constant dataType="string">NA::b</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="lessdaily_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="lessdaily"/>
+     <Constant dataType="string">yless</Constant>
+    </Apply>
+    <Constant dataType="string">yless</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="lessdaily"/>
+      <Constant dataType="string">nless</Constant>
+     </Apply>
+     <Constant dataType="string">nless</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="pastsmoke_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="pastsmoke"/>
+     <Constant dataType="string">dal</Constant>
+    </Apply>
+    <Constant dataType="string">dal</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="pastsmoke"/>
+      <Constant dataType="string">dal2</Constant>
+     </Apply>
+     <Constant dataType="string">dal2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="PackYears_cont" displayName="Packyears Smoking" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Packyears of smoking"/>
+   <Extension name="units" value="packyears"/>
+   <Apply function="PackYears_cont.fun">
+    <FieldRef field="TypeOfSmoker2"/>
+    <FieldRef field="Age_cont"/>
+    <FieldRef field="dailyage_mut"/>
+    <FieldRef field="dailycig_mut"/>
+    <FieldRef field="stopdaily_mut"/>
+    <FieldRef field="dailyage2_mut"/>
+    <FieldRef field="dailycig3_mut"/>
+    <FieldRef field="stopdaily2_mut"/>
+    <FieldRef field="dailyage3_mut"/>
+    <FieldRef field="dailycig4_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="dailyage_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailyage"/>
+  </DerivedField>
+  <DerivedField name="dailycig_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailycig"/>
+  </DerivedField>
+  <DerivedField name="stopdaily_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="stopdaily"/>
+  </DerivedField>
+  <DerivedField name="dailyage2_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailyage2"/>
+  </DerivedField>
+  <DerivedField name="dailycig3_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailycig3"/>
+  </DerivedField>
+  <DerivedField name="stopdaily2_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="stopdaily2"/>
+  </DerivedField>
+  <DerivedField name="dailyage3_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailyage3"/>
+  </DerivedField>
+  <DerivedField name="dailycig4_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="dailycig4"/>
+  </DerivedField>
+  <DerivedField name="drk_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="drk"/>
+  </DerivedField>
+  <DerivedField name="DrinksLastWeek_cont" displayName="Drinks Last Week" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Drinks consumed last week"/>
+   <Extension name="units" value="drinks per week"/>
+   <Apply function="if">
+    <Apply function="and">
+     <Apply function="or">
+      <Apply function="greaterThan">
+       <FieldRef field="drk_mut"/>
+       <Constant dataType="integer">0</Constant>
+      </Apply>
+      <Apply function="equal">
+       <FieldRef field="drk_mut"/>
+       <Constant dataType="integer">0</Constant>
+      </Apply>
+     </Apply>
+     <Apply function="or">
+      <Apply function="lessThan">
+       <FieldRef field="drk_mut"/>
+       <Constant dataType="integer">50</Constant>
+      </Apply>
+      <Apply function="equal">
+       <FieldRef field="drk_mut"/>
+       <Constant dataType="integer">50</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+    <FieldRef field="drk_mut"/>
+    <Constant dataType="string">NA::b</Constant>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="FormerDrinker" displayName="Former Drinker" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Former drinker (Yes/No)"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="FormerDrinker.fun">
+    <FieldRef field="drk_mut"/>
+    <FieldRef field="evdk_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Former drinker">
+    <Extension name="catLabelLong" value="Former drinker"/>
+   </Value>
+   <Value value="2" displayValue="Not a former drinker">
+    <Extension name="catLabelLong" value="Not a former drinker"/>
+   </Value>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="evdk_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="evdk"/>
+     <Constant dataType="string">evdk1</Constant>
+    </Apply>
+    <Constant dataType="string">evdk1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="evdk"/>
+      <Constant dataType="string">evdk2</Constant>
+     </Apply>
+     <Constant dataType="string">evdk2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="FruitVeg_cont" displayName="Daily Fruit and Vegetables" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Average daily consumption of fruit, salad, potato, carrots, vegetables"/>
+   <Extension name="units" value="per day"/>
+   <Apply function="FruitVeg_cont.fun">
+    <FieldRef field="fv_fruit1_mut"/>
+    <FieldRef field="fv_veg1_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="fv_fruit1_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="fv_fruit1"/>
+  </DerivedField>
+  <DerivedField name="fv_veg1_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="fv_veg1"/>
+  </DerivedField>
+  <DerivedField name="Potato_cont" displayName="Daily Potato" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Average daily consumption of potato"/>
+   <Extension name="units" value="per day"/>
+   <Apply function="Potato_cont.fun">
+    <FieldRef field="fv_pot1_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="fv_pot1_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="fv_pot1"/>
+  </DerivedField>
+  <DerivedField name="Juice_cont" displayName="Daily Juice" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Average daily consumption of juice, with max"/>
+   <Extension name="units" value="per day"/>
+   <Apply function="Juice_cont.fun">
+    <FieldRef field="fv_juice1_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="fv_juice1_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="fv_juice1"/>
+  </DerivedField>
+  <DerivedField name="PhysicalActivity_cont" displayName="Physical Activity" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Average daily leisure time energy expenditure in METs"/>
+   <Extension name="units" value="METs per day"/>
+   <Apply function="PhysicalActivity_cont.fun">
+    <FieldRef field="vigact_mut"/>
+    <FieldRef field="modact_mut"/>
+    <FieldRef field="ligact_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="N/A">
+    <Extension name="catLabelLong" value="N/A"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="vigact_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="vigact"/>
+  </DerivedField>
+  <DerivedField name="modact_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="modact"/>
+  </DerivedField>
+  <DerivedField name="ligact_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="ligact"/>
+  </DerivedField>
+  <DerivedField name="HeartDis_cat" displayName="Heart Disease" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Has heart disease"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_hd"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_hd"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Heart disease">
+    <Extension name="catLabelLong" value="Heart disease"/>
+   </Value>
+   <Value value="2" displayValue="No heart disease">
+    <Extension name="catLabelLong" value="No heart disease"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Stroke_cat" displayName="Stroke" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Suffers from effects of a previous stroke"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_stk"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_stk"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Stroke">
+    <Extension name="catLabelLong" value="Stroke"/>
+   </Value>
+   <Value value="2" displayValue="No Stroke">
+    <Extension name="catLabelLong" value="No Stroke"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Diabetes_cat" displayName="Diabetes" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Diabetes"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_diab"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_diab"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Diabetes">
+    <Extension name="catLabelLong" value="Diabetes"/>
+   </Value>
+   <Value value="2" displayValue="No Diabetes">
+    <Extension name="catLabelLong" value="No Diabetes"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Mood_cat" displayName="Has a mood disorder" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Has a mood disorder"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_mood"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_mood"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Mood disorder">
+    <Extension name="catLabelLong" value="Mood disorder"/>
+   </Value>
+   <Value value="2" displayValue="No mood disorder">
+    <Extension name="catLabelLong" value="No mood disorder"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Hypertension_cat" displayName="Has hypertension" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Has hypertension"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="hbp"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="hbp"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Hypertension">
+    <Extension name="catLabelLong" value="Hypertension"/>
+   </Value>
+   <Value value="2" displayValue="No hypertension">
+    <Extension name="catLabelLong" value="No hypertension"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="COPD_cat" displayName="Has COPD" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Has COPD, emphysema or chronic bronchitis"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_copd"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_copd"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="COPD">
+    <Extension name="catLabelLong" value="COPD"/>
+   </Value>
+   <Value value="2" displayValue="No COPD">
+    <Extension name="catLabelLong" value="No COPD"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Epilepsy_cat" displayName="Epilepsy" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Has epilepsy"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="epil"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="epil"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="Epilepsy">
+    <Extension name="catLabelLong" value="Epilepsy"/>
+   </Value>
+   <Value value="2" displayValue="No epilepsy">
+    <Extension name="catLabelLong" value="No epilepsy"/>
+   </Value>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="BMI_cont" displayName="Body mass index" optype="cont" dataType="float">
+   <Extension name="labelLong" value="Body mass index"/>
+   <Extension name="units" value="kg/m2"/>
+   <Apply function="BMI_cont.fun">
+    <FieldRef field="lbs_mut"/>
+    <FieldRef field="kgs_mut"/>
+    <FieldRef field="cm_mut"/>
+    <FieldRef field="feetinches_feet_mut"/>
+    <FieldRef field="feetinches_inches_mut"/>
+   </Apply>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="lbs_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="lbs"/>
+  </DerivedField>
+  <DerivedField name="kgs_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="kgs"/>
+  </DerivedField>
+  <DerivedField name="cm_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="cm"/>
+  </DerivedField>
+  <DerivedField name="feetinches_feet_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="feetinches_feet"/>
+  </DerivedField>
+  <DerivedField name="feetinches_inches_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <FieldRef field="feetinches_inches"/>
+  </DerivedField>
+  <DerivedField name="NeedHelp" displayName="Number of tasks needing assistance" optype="cat" dataType="string">
+   <Extension name="labelLong" value="Number of tasks needing assistance"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="NeedHelp.fun">
+    <FieldRef field="needhelp_meals_mut"/>
+    <FieldRef field="needhelp_errands_mut"/>
+    <FieldRef field="needhelp_hw_mut"/>
+    <FieldRef field="needhelp_pcare_mut"/>
+    <FieldRef field="needhelp_mov_mut"/>
+    <FieldRef field="needhelp_finan_mut"/>
+    <FieldRef field="needhelp_none_mut"/>
+   </Apply>
+   <Value value="0" displayValue="0">
+    <Extension name="catLabelLong" value="Does not need help with daily activities"/>
+   </Value>
+   <Value value="1" displayValue="1">
+    <Extension name="catLabelLong" value="Need help with 1 activity"/>
+   </Value>
+   <Value value="2" displayValue="2">
+    <Extension name="catLabelLong" value="Need help with 2 activities"/>
+   </Value>
+   <Value value="3" displayValue="3">
+    <Extension name="catLabelLong" value="Need help with 3 activities"/>
+   </Value>
+   <Value value="4" displayValue="4">
+    <Extension name="catLabelLong" value="Need help with 4 activities"/>
+   </Value>
+   <Value value="5" displayValue="5">
+    <Extension name="catLabelLong" value="Need help with 5 activities"/>
+   </Value>
+   <Value value="6" displayValue="6">
+    <Extension name="catLabelLong" value="Need help with 6 activities"/>
+   </Value>
+   <Value value="NA::a" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_meals_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_meals"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_meals"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_errands_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_errands"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_errands"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_hw_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_hw"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_hw"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_pcare_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_pcare"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_pcare"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_mov_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_mov"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_mov"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_finan_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_finan"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_finan"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="needhelp_none_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_none"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_none"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="Invalid">
+    <Extension name="catLabelLong" value="Invalid"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="SurveyCycle" displayName="Survey Cycle" optype="cat" dataType="string">
+   <Extension name="labelLong" value="CCHS Survey Cycle"/>
+   <Extension name="units" value="N/A"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="surveyCycle"/>
+     <Constant dataType="integer">1</Constant>
+    </Apply>
+    <Constant dataType="integer">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="surveyCycle"/>
+      <Constant dataType="integer">2</Constant>
+     </Apply>
+     <Constant dataType="integer">2</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="surveyCycle"/>
+       <Constant dataType="integer">3</Constant>
+      </Apply>
+      <Constant dataType="integer">3</Constant>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="surveyCycle"/>
+        <Constant dataType="integer">4</Constant>
+       </Apply>
+       <Constant dataType="integer">4</Constant>
+       <Apply function="if">
+        <Apply function="equal">
+         <FieldRef field="surveyCycle"/>
+         <Constant dataType="integer">5</Constant>
+        </Apply>
+        <Constant dataType="integer">5</Constant>
+        <Apply function="if">
+         <Apply function="equal">
+          <FieldRef field="surveyCycle"/>
+          <Constant dataType="integer">6</Constant>
+         </Apply>
+         <Constant dataType="integer">6</Constant>
+         <Constant dataType="string">NA::b</Constant>
+        </Apply>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+   <Value value="1" displayValue="2001">
+    <Extension name="catLabelLong" value="CCHS 1.1 (2001)"/>
+   </Value>
+   <Value value="2" displayValue="2003">
+    <Extension name="catLabelLong" value="CCHS 2.1 (2003)"/>
+   </Value>
+   <Value value="3" displayValue="2005">
+    <Extension name="catLabelLong" value="CCHS 3.1 (2005)"/>
+   </Value>
+   <Value value="4" displayValue="2007/2008">
+    <Extension name="catLabelLong" value="CCHS 4.1 (2007/08)"/>
+   </Value>
+   <Value value="5" displayValue="2009/2010">
+    <Extension name="catLabelLong" value="CCHS 2009/10"/>
+   </Value>
+   <Value value="6" displayValue="2011/2012">
+    <Extension name="catLabelLong" value="CCHS 2011/12"/>
+   </Value>
+   <Value value="NA::b" displayValue="Missing">
+    <Extension name="catLabelLong" value="Missing"/>
+   </Value>
+  </DerivedField>
+  <DefineFunction name="TypeOfSmoker2.fun">
+   <ParameterField name="smokingstat" dataType="double"/>
+   <ParameterField name="lessdaily" dataType="double"/>
+   <ParameterField name="pastsmoke" dataType="double"/>
+   <Apply function="if">
+    <Apply function="or">
+     <Apply function="or">
+      <Apply function="is.na">
+       <FieldRef field="smokingstat"/>
+      </Apply>
+      <Apply function="and">
+       <Apply function="equal">
+        <FieldRef field="smokingstat"/>
+        <Constant dataType="string">A2</Constant>
+       </Apply>
+       <Apply function="is.na">
+        <FieldRef field="lessdaily"/>
+       </Apply>
+      </Apply>
+     </Apply>
+     <Apply function="and">
+      <Apply function="equal">
+       <FieldRef field="smokingstat"/>
+       <Constant dataType="string">A3</Constant>
+      </Apply>
+      <Apply function="is.na">
+       <FieldRef field="pastsmoke"/>
+      </Apply>
+     </Apply>
+    </Apply>
+    <Constant dataType="string">NA::a</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="smokingstat"/>
+      <Constant dataType="string">A1</Constant>
+     </Apply>
+     <Constant dataType="double">1</Constant>
+     <Apply function="if">
+      <Apply function="and">
+       <Apply function="equal">
+        <FieldRef field="smokingstat"/>
+        <Constant dataType="string">A2</Constant>
+       </Apply>
+       <Apply function="equal">
+        <FieldRef field="lessdaily"/>
+        <Constant dataType="string">yless</Constant>
+       </Apply>
+      </Apply>
+      <Constant dataType="double">2</Constant>
+      <Apply function="if">
+       <Apply function="and">
+        <Apply function="equal">
+         <FieldRef field="smokingstat"/>
+         <Constant dataType="string">A2</Constant>
+        </Apply>
+        <Apply function="equal">
+         <FieldRef field="lessdaily"/>
+         <Constant dataType="string">nless</Constant>
+        </Apply>
+       </Apply>
+       <Constant dataType="double">3</Constant>
+       <Apply function="if">
+        <Apply function="and">
+         <Apply function="equal">
+          <FieldRef field="smokingstat"/>
+          <Constant dataType="string">A3</Constant>
+         </Apply>
+         <Apply function="equal">
+          <FieldRef field="pastsmoke"/>
+          <Constant dataType="string">dal</Constant>
+         </Apply>
+        </Apply>
+        <Constant dataType="double">4</Constant>
+        <Apply function="if">
+         <Apply function="and">
+          <Apply function="equal">
+           <FieldRef field="smokingstat"/>
+           <Constant dataType="string">A3</Constant>
+          </Apply>
+          <Apply function="equal">
+           <FieldRef field="pastsmoke"/>
+           <Constant dataType="string">dal2</Constant>
+          </Apply>
+         </Apply>
+         <Constant dataType="double">5</Constant>
+         <Constant dataType="double">6</Constant>
+        </Apply>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="SmokeSimple.fun">
+   <ParameterField name="TypeOfSmoker2" dataType="double"/>
+   <ParameterField name="tsq5" dataType="double"/>
+   <Apply function="if">
+    <Apply function="or">
+     <Apply function="or">
+      <Apply function="is.na">
+       <FieldRef field="TypeOfSmoker2"/>
+      </Apply>
+      <Apply function="and">
+       <Apply function="equal">
+        <FieldRef field="TypeOfSmoker2"/>
+        <Constant dataType="double">4</Constant>
+       </Apply>
+       <Apply function="is.na">
+        <FieldRef field="tsq5"/>
+       </Apply>
+      </Apply>
+     </Apply>
+     <Apply function="and">
+      <Apply function="equal">
+       <FieldRef field="TypeOfSmoker2"/>
+       <Constant dataType="double">5</Constant>
+      </Apply>
+      <Apply function="is.na">
+       <FieldRef field="tsq5"/>
+      </Apply>
+     </Apply>
+    </Apply>
+    <Constant dataType="string">NA::a</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="TypeOfSmoker2"/>
+      <Constant dataType="double">6</Constant>
+     </Apply>
+     <Constant dataType="double">1</Constant>
+     <Apply function="if">
+      <Apply function="or">
+       <Apply function="and">
+        <Apply function="equal">
+         <FieldRef field="TypeOfSmoker2"/>
+         <Constant dataType="double">4</Constant>
+        </Apply>
+        <Apply function="equal">
+         <FieldRef field="tsq5"/>
+         <Constant dataType="string">more5</Constant>
+        </Apply>
+       </Apply>
+       <Apply function="and">
+        <Apply function="equal">
+         <FieldRef field="TypeOfSmoker2"/>
+         <Constant dataType="double">5</Constant>
+        </Apply>
+        <Apply function="equal">
+         <FieldRef field="tsq5"/>
+         <Constant dataType="string">more5</Constant>
+        </Apply>
+       </Apply>
+      </Apply>
+      <Constant dataType="double">2</Constant>
+      <Apply function="if">
+       <Apply function="or">
+        <Apply function="and">
+         <Apply function="equal">
+          <FieldRef field="TypeOfSmoker2"/>
+          <Constant dataType="double">4</Constant>
+         </Apply>
+         <Apply function="equal">
+          <FieldRef field="tsq5"/>
+          <Constant dataType="string">less5</Constant>
+         </Apply>
+        </Apply>
+        <Apply function="and">
+         <Apply function="equal">
+          <FieldRef field="TypeOfSmoker2"/>
+          <Constant dataType="double">4</Constant>
+         </Apply>
+         <Apply function="equal">
+          <FieldRef field="tsq5"/>
+          <Constant dataType="string">less5</Constant>
+         </Apply>
+        </Apply>
+       </Apply>
+       <Constant dataType="double">3</Constant>
+       <Constant dataType="double">4</Constant>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="PackYears_cont.fun">
+   <ParameterField name="TypeOfSmoker2" dataType="double"/>
+   <ParameterField name="Age_cont" dataType="double"/>
+   <ParameterField name="dailyage" dataType="double"/>
+   <ParameterField name="dailycig" dataType="double"/>
+   <ParameterField name="stopdaily" dataType="double"/>
+   <ParameterField name="dailyage2" dataType="double"/>
+   <ParameterField name="dailycig3" dataType="double"/>
+   <ParameterField name="stopdaily2" dataType="double"/>
+   <ParameterField name="dailyage3" dataType="double"/>
+   <ParameterField name="dailycig4" dataType="double"/>
+   <Apply function="if">
+    <Apply function="or">
+     <Apply function="or">
+      <Apply function="or">
+       <Apply function="is.na">
+        <FieldRef field="TypeOfSmoker2"/>
+       </Apply>
+       <Apply function="and">
+        <Apply function="equal">
+         <FieldRef field="TypeOfSmoker2"/>
+         <Constant dataType="double">1</Constant>
+        </Apply>
+        <Apply function="or">
+         <Apply function="is.na">
+          <FieldRef field="dailyage"/>
+         </Apply>
+         <Apply function="is.na">
+          <FieldRef field="dailycig"/>
+         </Apply>
+        </Apply>
+       </Apply>
+      </Apply>
+      <Apply function="and">
+       <Apply function="equal">
+        <FieldRef field="TypeOfSmoker2"/>
+        <Constant dataType="double">2</Constant>
+       </Apply>
+       <Apply function="or">
+        <Apply function="or">
+         <Apply function="is.na">
+          <FieldRef field="stopdaily"/>
+         </Apply>
+         <Apply function="is.na">
+          <FieldRef field="dailyage2"/>
+         </Apply>
+        </Apply>
+        <Apply function="is.na">
+         <FieldRef field="dailycig3"/>
+        </Apply>
+       </Apply>
+      </Apply>
+     </Apply>
+     <Apply function="and">
+      <Apply function="equal">
+       <FieldRef field="TypeOfSmoker2"/>
+       <Constant dataType="double">4</Constant>
+      </Apply>
+      <Apply function="or">
+       <Apply function="or">
+        <Apply function="is.na">
+         <FieldRef field="stopdaily2"/>
+        </Apply>
+        <Apply function="is.na">
+         <FieldRef field="dailyage3"/>
+        </Apply>
+       </Apply>
+       <Apply function="is.na">
+        <FieldRef field="dailycig4"/>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+    <Constant dataType="NA">NA</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="TypeOfSmoker2"/>
+      <Constant dataType="double">1</Constant>
+     </Apply>
+     <Apply function="*">
+      <Apply function="-">
+       <FieldRef field="Age_cont"/>
+       <FieldRef field="dailyage"/>
+      </Apply>
+      <Apply function="/">
+       <FieldRef field="dailycig"/>
+       <Constant dataType="double">20</Constant>
+      </Apply>
+     </Apply>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="TypeOfSmoker2"/>
+       <Constant dataType="double">2</Constant>
+      </Apply>
+      <Apply function="*">
+       <Apply function="-">
+        <FieldRef field="stopdaily"/>
+        <FieldRef field="dailyage2"/>
+       </Apply>
+       <Apply function="/">
+        <FieldRef field="dailycig3"/>
+        <Constant dataType="double">20</Constant>
+       </Apply>
+      </Apply>
+      <Apply function="if">
+       <Apply function="equal">
+        <FieldRef field="TypeOfSmoker2"/>
+        <Constant dataType="double">3</Constant>
+       </Apply>
+       <Constant dataType="double">0</Constant>
+       <Apply function="if">
+        <Apply function="equal">
+         <FieldRef field="TypeOfSmoker2"/>
+         <Constant dataType="double">4</Constant>
+        </Apply>
+        <Apply function="*">
+         <Apply function="-">
+          <FieldRef field="stopdaily2"/>
+          <FieldRef field="dailyage3"/>
+         </Apply>
+         <Apply function="/">
+          <FieldRef field="dailycig4"/>
+          <Constant dataType="double">20</Constant>
+         </Apply>
+        </Apply>
+        <Constant dataType="double">0</Constant>
+       </Apply>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="FormerDrinker.fun">
+   <ParameterField name="drk" dataType="double"/>
+   <ParameterField name="evdk" dataType="double"/>
+   <Apply function="if">
+    <Apply function="is.na">
+     <FieldRef field="drk"/>
+    </Apply>
+    <Constant dataType="string">NA::a</Constant>
+    <Apply function="if">
+     <Apply function="and">
+      <Apply function="equal">
+       <FieldRef field="drk"/>
+       <Constant dataType="double">0</Constant>
+      </Apply>
+      <Apply function="equal">
+       <FieldRef field="evdk"/>
+       <Constant dataType="string">evdk2</Constant>
+      </Apply>
+     </Apply>
+     <Constant dataType="double">1</Constant>
+     <Apply function="if">
+      <Apply function="and">
+       <Apply function="equal">
+        <FieldRef field="drk"/>
+        <Constant dataType="double">0</Constant>
+       </Apply>
+       <Apply function="equal">
+        <FieldRef field="evdk"/>
+        <Constant dataType="string">evdk1</Constant>
+       </Apply>
+      </Apply>
+      <Constant dataType="double">2</Constant>
+      <Constant dataType="string">NA::a</Constant>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="FruitVeg_cont.fun">
+   <ParameterField name="fv_fruit1" dataType="double"/>
+   <ParameterField name="fv_veg1" dataType="double"/>
+   <Apply function="/">
+    <Apply function="+">
+     <FieldRef field="fv_fruit1"/>
+     <FieldRef field="fv_veg1"/>
+    </Apply>
+    <Constant dataType="double">7</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="Potato_cont.fun">
+   <ParameterField name="fv_pot1" dataType="double"/>
+   <Apply function="/">
+    <FieldRef field="fv_pot1"/>
+    <Constant dataType="double">7</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="Juice_cont.fun">
+   <ParameterField name="fv_juice1" dataType="double"/>
+   <Apply function="/">
+    <FieldRef field="fv_juice1"/>
+    <Constant dataType="double">7</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(vig)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Constant dataType="double">0</Constant>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(vig)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Apply function="if">
+    <Apply function="not">
+     <Apply function="is.na">
+      <FieldRef field="vigact"/>
+     </Apply>
+    </Apply>
+    <FieldRef field="vigact"/>
+    <Constant dataType="NULL">NULL</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(mod)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Constant dataType="double">0</Constant>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(mod)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Apply function="if">
+    <Apply function="not">
+     <Apply function="is.na">
+      <FieldRef field="modact"/>
+     </Apply>
+    </Apply>
+    <FieldRef field="modact"/>
+    <Constant dataType="NULL">NULL</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(ligact)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Constant dataType="double">0</Constant>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun(lig)">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Apply function="if">
+    <Apply function="not">
+     <Apply function="is.na">
+      <FieldRef field="ligact"/>
+     </Apply>
+    </Apply>
+    <FieldRef field="ligact"/>
+    <Constant dataType="NULL">NULL</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="PhysicalActivity_cont.fun">
+   <ParameterField name="vigact" dataType="double"/>
+   <ParameterField name="modact" dataType="double"/>
+   <ParameterField name="ligact" dataType="double"/>
+   <Apply function="if">
+    <Apply function="and">
+     <Apply function="and">
+      <Apply function="is.na">
+       <FieldRef field="vigact"/>
+      </Apply>
+      <Apply function="is.na">
+       <FieldRef field="modact"/>
+      </Apply>
+     </Apply>
+     <Apply function="is.na">
+      <FieldRef field="ligact"/>
+     </Apply>
+    </Apply>
+    <Constant dataType="string">NA::a</Constant>
+    <Apply function="+">
+     <Apply function="+">
+      <Apply function="*">
+       <Apply function="/">
+        <Apply function="PhysicalActivity_cont.fun(vig)">
+         <FieldRef field="vigact"/>
+         <FieldRef field="modact"/>
+         <FieldRef field="ligact"/>
+        </Apply>
+        <Constant dataType="double">7</Constant>
+       </Apply>
+       <Constant dataType="double">8</Constant>
+      </Apply>
+      <Apply function="*">
+       <Apply function="/">
+        <Apply function="PhysicalActivity_cont.fun(mod)">
+         <FieldRef field="vigact"/>
+         <FieldRef field="modact"/>
+         <FieldRef field="ligact"/>
+        </Apply>
+        <Constant dataType="double">7</Constant>
+       </Apply>
+       <Constant dataType="double">5</Constant>
+      </Apply>
+     </Apply>
+     <Apply function="*">
+      <Apply function="/">
+       <Apply function="PhysicalActivity_cont.fun(lig)">
+        <FieldRef field="vigact"/>
+        <FieldRef field="modact"/>
+        <FieldRef field="ligact"/>
+       </Apply>
+       <Constant dataType="double">7</Constant>
+      </Apply>
+      <Constant dataType="double">3</Constant>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(meals)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(meals)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_meals"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_meals"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(errands)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(errands)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_errands"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_errands"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(hw)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(hw)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_hw"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_hw"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(pcare)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(pcare)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_pcare"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_pcare"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(mov)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(mov)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_mov"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_mov"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(fina)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun(fina)">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_fina"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">1</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="needhelp_fina"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="double">0</Constant>
+     <Constant dataType="NULL">NULL</Constant>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="NeedHelp.fun">
+   <ParameterField name="needhelp_meals" dataType="double"/>
+   <ParameterField name="needhelp_errands" dataType="double"/>
+   <ParameterField name="needhelp_hw" dataType="double"/>
+   <ParameterField name="needhelp_pcare" dataType="double"/>
+   <ParameterField name="needhelp_mov" dataType="double"/>
+   <ParameterField name="needhelp_fina" dataType="double"/>
+   <ParameterField name="needhelp_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="needhelp_none"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">0</Constant>
+    <Apply function="sum">
+     <Apply function="+">
+      <Apply function="+">
+       <Apply function="+">
+        <Apply function="+">
+         <Apply function="+">
+          <Apply function="NeedHelp.fun(meals)">
+           <FieldRef field="needhelp_meals"/>
+           <FieldRef field="needhelp_errands"/>
+           <FieldRef field="needhelp_hw"/>
+           <FieldRef field="needhelp_pcare"/>
+           <FieldRef field="needhelp_mov"/>
+           <FieldRef field="needhelp_fina"/>
+           <FieldRef field="needhelp_none"/>
+          </Apply>
+          <Apply function="NeedHelp.fun(errands)">
+           <FieldRef field="needhelp_meals"/>
+           <FieldRef field="needhelp_errands"/>
+           <FieldRef field="needhelp_hw"/>
+           <FieldRef field="needhelp_pcare"/>
+           <FieldRef field="needhelp_mov"/>
+           <FieldRef field="needhelp_fina"/>
+           <FieldRef field="needhelp_none"/>
+          </Apply>
+         </Apply>
+         <Apply function="NeedHelp.fun(hw)">
+          <FieldRef field="needhelp_meals"/>
+          <FieldRef field="needhelp_errands"/>
+          <FieldRef field="needhelp_hw"/>
+          <FieldRef field="needhelp_pcare"/>
+          <FieldRef field="needhelp_mov"/>
+          <FieldRef field="needhelp_fina"/>
+          <FieldRef field="needhelp_none"/>
+         </Apply>
+        </Apply>
+        <Apply function="NeedHelp.fun(pcare)">
+         <FieldRef field="needhelp_meals"/>
+         <FieldRef field="needhelp_errands"/>
+         <FieldRef field="needhelp_hw"/>
+         <FieldRef field="needhelp_pcare"/>
+         <FieldRef field="needhelp_mov"/>
+         <FieldRef field="needhelp_fina"/>
+         <FieldRef field="needhelp_none"/>
+        </Apply>
+       </Apply>
+       <Apply function="NeedHelp.fun(mov)">
+        <FieldRef field="needhelp_meals"/>
+        <FieldRef field="needhelp_errands"/>
+        <FieldRef field="needhelp_hw"/>
+        <FieldRef field="needhelp_pcare"/>
+        <FieldRef field="needhelp_mov"/>
+        <FieldRef field="needhelp_fina"/>
+        <FieldRef field="needhelp_none"/>
+       </Apply>
+      </Apply>
+      <Apply function="NeedHelp.fun(fina)">
+       <FieldRef field="needhelp_meals"/>
+       <FieldRef field="needhelp_errands"/>
+       <FieldRef field="needhelp_hw"/>
+       <FieldRef field="needhelp_pcare"/>
+       <FieldRef field="needhelp_mov"/>
+       <FieldRef field="needhelp_fina"/>
+       <FieldRef field="needhelp_none"/>
+      </Apply>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(missing_bmi)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Constant dataType="boolean">false</Constant>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(missing_bmi)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Apply function="if">
+    <Apply function="or">
+     <Apply function="and">
+      <Apply function="is.na">
+       <FieldRef field="lbs"/>
+      </Apply>
+      <Apply function="is.na">
+       <FieldRef field="kgs"/>
+      </Apply>
+     </Apply>
+     <Apply function="or">
+      <Apply function="is.na">
+       <FieldRef field="feetinches_feet"/>
+      </Apply>
+      <Apply function="is.na">
+       <FieldRef field="feetinches_inches"/>
+      </Apply>
+     </Apply>
+    </Apply>
+    <Constant dataType="boolean">true</Constant>
+    <Constant dataType="NULL">NULL</Constant>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(formatted_kgs)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <FieldRef field="kgs"/>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(formatted_kgs)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <Apply function="BMI_cont.fun(missing_bmi)">
+      <FieldRef field="lbs"/>
+      <FieldRef field="kgs"/>
+      <FieldRef field="cm"/>
+      <FieldRef field="feetinches_feet"/>
+      <FieldRef field="feetinches_inches"/>
+     </Apply>
+     <Constant dataType="boolean">true</Constant>
+    </Apply>
+    <Constant dataType="NA">NA</Constant>
+    <Apply function="if">
+     <Apply function="is.na">
+      <FieldRef field="kgs"/>
+     </Apply>
+     <Constant dataType="NA">NA</Constant>
+     <Apply function="round">
+      <Apply function="/">
+       <FieldRef field="lbs"/>
+       <Constant dataType="double">2.2046</Constant>
+      </Apply>
+      <Constant dataType="double">2</Constant>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(metres)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Constant dataType="NA">NA</Constant>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun(metres)">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Apply function="if">
+    <Apply function="BMI_cont.fun(missing_bmi)">
+     <FieldRef field="lbs"/>
+     <FieldRef field="kgs"/>
+     <FieldRef field="cm"/>
+     <FieldRef field="feetinches_feet"/>
+     <FieldRef field="feetinches_inches"/>
+    </Apply>
+    <Constant dataType="NA">NA</Constant>
+    <Apply function="if">
+     <Apply function="is.na">
+      <FieldRef field="cm"/>
+     </Apply>
+     <Apply function="/">
+      <Apply function="round">
+       <Apply function="+">
+        <Apply function="*">
+         <FieldRef field="feetinches_feet"/>
+         <Constant dataType="double">30.48</Constant>
+        </Apply>
+        <Apply function="*">
+         <FieldRef field="feetinches_inches"/>
+         <Constant dataType="double">2.54</Constant>
+        </Apply>
+       </Apply>
+       <Constant dataType="double">2</Constant>
+      </Apply>
+      <Constant dataType="double">100</Constant>
+     </Apply>
+     <Apply function="/">
+      <FieldRef field="cm"/>
+      <Constant dataType="double">100</Constant>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="BMI_cont.fun">
+   <ParameterField name="lbs" dataType="double"/>
+   <ParameterField name="kgs" dataType="double"/>
+   <ParameterField name="cm" dataType="double"/>
+   <ParameterField name="feetinches_feet" dataType="double"/>
+   <ParameterField name="feetinches_inches" dataType="double"/>
+   <Apply function="/">
+    <FieldRef field="kgs"/>
+    <Apply function="*">
+     <Apply function="BMI_cont.fun(metres)">
+      <FieldRef field="lbs"/>
+      <FieldRef field="kgs"/>
+      <FieldRef field="cm"/>
+      <FieldRef field="feetinches_feet"/>
+      <FieldRef field="feetinches_inches"/>
+     </Apply>
+     <Apply function="BMI_cont.fun(metres)">
+      <FieldRef field="lbs"/>
+      <FieldRef field="kgs"/>
+      <FieldRef field="cm"/>
+      <FieldRef field="feetinches_feet"/>
+      <FieldRef field="feetinches_inches"/>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DerivedField name="Sexmale_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Sex"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Sexfemale_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Sex"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnWhite4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Ethnicity4"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnSEAsian4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Ethnicity4"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnOther4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Ethnicity4"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnSWAsian4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Ethnicity4"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Immigrant_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Immigrant"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="ImmigrantNo_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Immigrant"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduLessHS2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Edu4"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduHSGrad2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Edu4"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduSomePS2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Edu4"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduPSGrad2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Edu4"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSMarried_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="MS4"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSDivorced_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="MS4"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSWidowed_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="MS4"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSSingle_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="MS4"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DepIndLow_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Deprivation"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DepIndMod_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Deprivation"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DepIndHigh_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Deprivation"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Multilingual_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Multilingual"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MultilingualNo_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Multilingual"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongStrong_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Belong"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongSome_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Belong"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongSWeak_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Belong"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongVWeak_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Belong"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressNotAtAll_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stress"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressNotVery_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stress"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressABit_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stress"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressQuite_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stress"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressExtreamly_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stress"/>
+     <Constant dataType="float">5</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthPoor_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SRHealth"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthFair_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SRHealth"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthGood_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SRHealth"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthVGood_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SRHealth"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthExcellent_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SRHealth"/>
+     <Constant dataType="float">5</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeNon_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SmokeSimple"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeFormer5Plus_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SmokeSimple"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeFormer0to5_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SmokeSimple"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeCurrent_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SmokeSimple"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="FormerDrinker_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="FormerDrinker"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="FornerDrinkerNo_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="FormerDrinker"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="COPD_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="COPD"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoCOPD_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="COPD"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="HeartDis_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="HeartDis"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoHeartDis_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="HeartDis"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Stroke_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stroke"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoStroke_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Stroke"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Diabetes_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Diabetes"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoDiabetes_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Diabetes"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Mood_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Mood"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoMood_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Mood"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Hypertension_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Hypertension"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoHypertension_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Hypertension"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="Epilepsy_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Epilepsy"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NoEpilepsy_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="Epilepsy"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp0_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">0</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp1_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp3_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp5_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">5</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp6_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="NeedHelp"/>
+     <Constant dataType="float">6</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle1_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">1</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle2_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">2</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle3_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">3</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle4_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">4</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle5_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">5</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle6_cat" optype="categorical" dataType="float">
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="SurveyCycle"/>
+     <Constant dataType="float">6</Constant>
+    </Apply>
+    <Constant dataType="float">1</Constant>
+    <Constant dataType="float">0</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="Age_cont"/>
+    <Constant dataType="float">68.8</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnSEAsian4C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EthnSEAsian4_cat"/>
+    <Constant dataType="float">0.0149</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnOther4C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EthnOther4_cat"/>
+    <Constant dataType="float">0.0335</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EthnSWAsian4C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EthnSWAsian4_cat"/>
+    <Constant dataType="float">0.0111</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="ImmigrantC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Immigrant_cat"/>
+    <Constant dataType="float">0.246</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduHSGrad2C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EduHSGrad2_cat"/>
+    <Constant dataType="float">0.208</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduSomePS2C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EduSomePS2_cat"/>
+    <Constant dataType="float">0.0496</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EduPSGrad2C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="EduPSGrad2_cat"/>
+    <Constant dataType="float">0.432</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSDivorcedC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="MSDivorced_cat"/>
+    <Constant dataType="float">0.123</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSWidowedC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="MSWidowed_cat"/>
+    <Constant dataType="float">0.338</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MSSingleC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="MSSingle_cat"/>
+    <Constant dataType="float">0.0535</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DepIndModC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="DepIndMod_cat"/>
+    <Constant dataType="float">0.654</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DepIndHighC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="DepIndHigh_cat"/>
+    <Constant dataType="float">0.169</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MultilingualC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Multilingual_cat"/>
+    <Constant dataType="float">0.269</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongSomeC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="BelongSome_cat"/>
+    <Constant dataType="float">0.47</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongSWeakC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="BelongSWeak_cat"/>
+    <Constant dataType="float">0.186</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BelongVWeakC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="BelongVWeak_cat"/>
+    <Constant dataType="float">0.0801</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressNotVeryC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="StressNotVery_cat"/>
+    <Constant dataType="float">0.31</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressABitC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="StressABit_cat"/>
+    <Constant dataType="float">0.352</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressQuiteC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="StressQuite_cat"/>
+    <Constant dataType="float">0.131</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StressExtreamlyC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="StressExtreamly_cat"/>
+    <Constant dataType="float">0.0275</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthPoorC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SRHealthPoor_cat"/>
+    <Constant dataType="float">0.325</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthFairC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SRHealthFair_cat"/>
+    <Constant dataType="float">0.306</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthGoodC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SRHealthGood_cat"/>
+    <Constant dataType="float">0.158</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SRHealthVGoodC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SRHealthVGood_cat"/>
+    <Constant dataType="float">0.0615</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PackYearsC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="PackYears_cont"/>
+    <Constant dataType="float">11.3</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeFormer5PlusC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SmokeFormer5Plus_cat"/>
+    <Constant dataType="float">0.383</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeFormer0to5C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SmokeFormer0to5_cat"/>
+    <Constant dataType="float">0.0613</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SmokeCurrentC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SmokeCurrent_cat"/>
+    <Constant dataType="float">0.145</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DrinksLastWeekC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="DrinksLastWeek_cont"/>
+    <Constant dataType="float">1.92</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="FormerDrinkerC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="FormerDrinker_cat"/>
+    <Constant dataType="float">0.212</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="FruitVegC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="FruitVeg_cont"/>
+    <Constant dataType="float">5.19</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PotatoC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="Potato_cont"/>
+    <Constant dataType="float">0.445</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="JuiceC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="Juice_cont"/>
+    <Constant dataType="float">0.757</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PhysicalActivityC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="PhysicalActivity_cont"/>
+    <Constant dataType="float">1.61</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="COPDC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="COPD_cat"/>
+    <Constant dataType="float">0.0835</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="HeartDisC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="HeartDis_cat"/>
+    <Constant dataType="float">0.14</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="StrokeC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Stroke_cat"/>
+    <Constant dataType="float">0.031</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DiabetesC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Diabetes_cat"/>
+    <Constant dataType="float">0.122</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="MoodC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Mood_cat"/>
+    <Constant dataType="float">0.0899</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="HypertensionC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Hypertension_cat"/>
+    <Constant dataType="float">0.434</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="EpilespyC_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="Epilepsy_cat"/>
+    <Constant dataType="float">0.00626</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BMIC_cont" optype="continuous" dataType="float">
+   <Apply function="-">
+    <FieldRef field="BMI_cont"/>
+    <Constant dataType="float">26.5</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp1C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp1_cat"/>
+    <Constant dataType="float">0.103</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp2C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp2_cat"/>
+    <Constant dataType="float">0.0529</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp3C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp3_cat"/>
+    <Constant dataType="float">0.0312</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp4C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp4_cat"/>
+    <Constant dataType="float">0.0184</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp5C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp5_cat"/>
+    <Constant dataType="float">0.0118</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="NeedHelp6C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="NeedHelp6_cat"/>
+    <Constant dataType="float">0.00866</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle2C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SurveyCycle2_cat"/>
+    <Constant dataType="float">0.161</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle3C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SurveyCycle3_cat"/>
+    <Constant dataType="float">0.157</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle4C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SurveyCycle4_cat"/>
+    <Constant dataType="float">0.176</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle5C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SurveyCycle5_cat"/>
+    <Constant dataType="float">0.182</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="SurveyCycle6C_cat" optype="categorical" dataType="string">
+   <Apply function="-">
+    <FieldRef field="SurveyCycle6_cat"/>
+    <Constant dataType="float">0.187</Constant>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXPackYearsC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="PackYearsC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXSmokeFormer5PlusC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="SmokeFormer5PlusC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXSmokeFormer0to5C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="SmokeFormer0to5C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXSmokeCurrentC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="SmokeCurrentC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXDrinksLastWeekC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="DrinksLastWeekC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXFormerDrinkerC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="FormerDrinkerC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXFruitVegC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="FruitVegC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXJuiceC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="JuiceC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXPotatoC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="PotatoC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXPhysicalActivityC_int" optype="continuous" dataType="float">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="PhysicalActivityC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXCOPDC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="COPDC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXHeartDisC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="HeartDisC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXStrokeC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="StrokeC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXDiabetesC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="DiabetesC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXMoodC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="MoodC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXHypertensionC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="HypertensionC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXEpilepsyC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="EpilepsyC_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXBMIC_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="BMIC_cont"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp1C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp1C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp2C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp2C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp3C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp3C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp4C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp4C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp5C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp5C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeCXNeedHelp6C_int" optype="categorical" dataType="string">
+   <Apply function="*">
+    <FieldRef field="AgeC_cont"/>
+    <FieldRef field="NeedHelp6C_cat"/>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="AgeC_cont"/>
+  </DerivedField>
+  <DerivedField name="AgeC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="AgeC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="5" type="float">-12.8 -7.8 -0.8 6.2 16.2</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeC_rcs3" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="AgeC_rcs1"/>
+    <Constant dataType="float">3</Constant>
+    <Array n="5" type="float">-12.8 -7.8 -0.8 6.2 16.2</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="AgeC_rcs4" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="AgeC_rcs1"/>
+    <Constant dataType="float">4</Constant>
+    <Array n="5" type="float">-12.8 -7.8 -0.8 6.2 16.2</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PackYearsC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="PackYearsC_cont"/>
+  </DerivedField>
+  <DerivedField name="PackYearsC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="PackYearsC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-11.3 -8.8 28.7</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="DrinksLastWeekC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="DrinksLastWeekC_cont"/>
+  </DerivedField>
+  <DerivedField name="DrinksLastWeek_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="DrinksLastWeekC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-1.92 0.08 5.08</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="FruitVegC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="FruitVegC_cont"/>
+  </DerivedField>
+  <DerivedField name="FruitVegC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="FruitVegC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-2.69 -0.29 3.01</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="JuiceC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="JuiceC_cont"/>
+  </DerivedField>
+  <DerivedField name="JuiceC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="JuiceC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-0.757 0.243 1.243</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PotatoC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="PotatoC_cont"/>
+  </DerivedField>
+  <DerivedField name="PotatoC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="PotatoC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-0.345 -0.045 0.555</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="PhysicalActivityC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="PhysicalActivityC_cont"/>
+  </DerivedField>
+  <DerivedField name="PhysicalActivityC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="PhysicalActivityC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-1.51 -0.11 2.49</Array>
+   </Apply>
+  </DerivedField>
+  <DerivedField name="BMIC_rcs1" optype="continuous" dataType="float">
+   <FieldRef field="BMIC_cont"/>
+  </DerivedField>
+  <DerivedField name="BMIC_rcs2" optype="continuous" dataType="float">
+   <Apply function="rcs">
+    <FieldRef field="BMIC_rcs1"/>
+    <Constant dataType="float">2</Constant>
+    <Array n="3" type="float">-5.76 -0.87 6.52</Array>
+   </Apply>
+  </DerivedField>
+ </TransformationDictionary>
+ <GeneralRegressionModel modelType="CoxRegression" functionName="regression" endTimeVariable="time">
+  <MiningSchema>
+   <MiningField name="risk" usageType="target"/>
+   <MiningField name="time" usageType="active"/>
+   <MiningField name="sex" usageType="active"/>
+   <MiningField name="age" usageType="active"/>
+   <MiningField name="eth" usageType="active"/>
+   <MiningField name="immig" usageType="active"/>
+   <MiningField name="edu" usageType="active"/>
+   <MiningField name="ms" usageType="active"/>
+   <MiningField name="dep" usageType="active"/>
+   <MiningField name="lang" usageType="active"/>
+   <MiningField name="belong" usageType="active"/>
+   <MiningField name="stress" usageType="active"/>
+   <MiningField name="srhealth" usageType="active"/>
+   <MiningField name="smokingstat" usageType="active"/>
+   <MiningField name="lessdaily" usageType="active"/>
+   <MiningField name="pastsmoke" usageType="active"/>
+   <MiningField name="dailyage" usageType="active"/>
+   <MiningField name="dailycig" usageType="active"/>
+   <MiningField name="stopdaily" usageType="active"/>
+   <MiningField name="dailyage2" usageType="active"/>
+   <MiningField name="dailycig3" usageType="active"/>
+   <MiningField name="stopdaily2" usageType="active"/>
+   <MiningField name="dailyage3" usageType="active"/>
+   <MiningField name="dailycig4" usageType="active"/>
+   <MiningField name="tsq5" usageType="active"/>
+   <MiningField name="drk" usageType="active"/>
+   <MiningField name="evdk" usageType="active"/>
+   <MiningField name="fv_fruit1" usageType="active"/>
+   <MiningField name="fv_veg1" usageType="active"/>
+   <MiningField name="fv_pot1" usageType="active"/>
+   <MiningField name="fv_juice1" usageType="active"/>
+   <MiningField name="vigact" usageType="active"/>
+   <MiningField name="modact" usageType="active"/>
+   <MiningField name="ligact" usageType="active"/>
+   <MiningField name="cond_copd" usageType="active"/>
+   <MiningField name="cond_hd" usageType="active"/>
+   <MiningField name="cond_stk" usageType="active"/>
+   <MiningField name="cond_diab" usageType="active"/>
+   <MiningField name="cond_mood" usageType="active"/>
+   <MiningField name="hbp" usageType="active"/>
+   <MiningField name="epil" usageType="active"/>
+   <MiningField name="lbs" usageType="active"/>
+   <MiningField name="kgs" usageType="active"/>
+   <MiningField name="cm" usageType="active"/>
+   <MiningField name="feetinches_feet" usageType="active"/>
+   <MiningField name="feetinches_inches" usageType="active"/>
+   <MiningField name="needhelp_meals" usageType="active"/>
+   <MiningField name="needhelp_errands" usageType="active"/>
+   <MiningField name="needhelp_hw" usageType="active"/>
+   <MiningField name="needhelp_pcare" usageType="active"/>
+   <MiningField name="needhelp_mov" usageType="active"/>
+   <MiningField name="needhelp_finan" usageType="active"/>
+   <MiningField name="needhelp_none" usageType="active"/>
+   <MiningField name="surveyCycle" usageType="active"/>
+  </MiningSchema>
+  <ParameterList>
+   <Parameter name="p0" label="Intercept"/>
+   <Parameter name="p1" label="AgeC_rcs1"/>
+   <Parameter name="p2" label="AgeC_rcs2"/>
+   <Parameter name="p3" label="AgeC_rcs3"/>
+   <Parameter name="p4" label="AgeC_rcs4"/>
+   <Parameter name="p5" label="EthnSEAsian4C_cat"/>
+   <Parameter name="p6" label="EthnOther4C_cat"/>
+   <Parameter name="p7" label="EthnSWAsian4C_cat"/>
+   <Parameter name="p8" label="ImmigrantC_cat"/>
+   <Parameter name="p9" label="EduHSGrad2C_cat"/>
+   <Parameter name="p10" label="EduSomePS2C_cat"/>
+   <Parameter name="p11" label="EduPSGrad2C_cat"/>
+   <Parameter name="p12" label="MSDivorcedC_cat"/>
+   <Parameter name="p13" label="MSWidowedC_cat"/>
+   <Parameter name="p14" label="MSSingleC_cat"/>
+   <Parameter name="p15" label="MultilingualC_cat"/>
+   <Parameter name="p16" label="DepIndModC_cat"/>
+   <Parameter name="p17" label="DepIndHighC_cat"/>
+   <Parameter name="p18" label="BelongSomeC_cat"/>
+   <Parameter name="p19" label="BelongSWeakC_cat"/>
+   <Parameter name="p20" label="BelongVWeakC_cat"/>
+   <Parameter name="p21" label="StressNotVeryC_cat"/>
+   <Parameter name="p22" label="StressABitC_cat"/>
+   <Parameter name="p23" label="StressQuiteC_cat"/>
+   <Parameter name="p24" label="StressExtreamlyC_cat"/>
+   <Parameter name="p25" label="SRHealthPoorC_cat"/>
+   <Parameter name="p26" label="SRHealthFairC_cat"/>
+   <Parameter name="p27" label="SRHealthGoodC_cat"/>
+   <Parameter name="p28" label="SRHealthVGoodC_cat"/>
+   <Parameter name="p29" label="PackYearsC_rcs1"/>
+   <Parameter name="p30" label="PackYearsC_rcs2"/>
+   <Parameter name="p31" label="SmokeFormer5PlusC_cat"/>
+   <Parameter name="p32" label="SmokeFormer0to5C_cat"/>
+   <Parameter name="p33" label="SmokeCurrentC_cat"/>
+   <Parameter name="p34" label="DrinksLastWeekC_rcs1"/>
+   <Parameter name="p35" label="DrinksLastWeekC_rcs2"/>
+   <Parameter name="p36" label="FormerDrinkerC_cat"/>
+   <Parameter name="p37" label="FruitVegC_rcs1"/>
+   <Parameter name="p38" label="FruitVegC_rcs2"/>
+   <Parameter name="p39" label="PotatoC_rcs1"/>
+   <Parameter name="p40" label="PotatoC_rcs2"/>
+   <Parameter name="p41" label="JuiceC_rcs1"/>
+   <Parameter name="p42" label="JuiceC_rcs2"/>
+   <Parameter name="p43" label="PhysicalActivityC_rcs1"/>
+   <Parameter name="p44" label="PhysicalActivityC_rcs2"/>
+   <Parameter name="p45" label="HeartDisC_cat"/>
+   <Parameter name="p46" label="StrokeC_cat"/>
+   <Parameter name="p47" label="DiabetesC_cat"/>
+   <Parameter name="p48" label="MoodC_cat"/>
+   <Parameter name="p49" label="HypertensionC_cat"/>
+   <Parameter name="p50" label="COPDC_cat"/>
+   <Parameter name="p51" label="EpilepsyC_cat"/>
+   <Parameter name="p52" label="BMIC_rcs1"/>
+   <Parameter name="p53" label="BMIC_rcs2"/>
+   <Parameter name="p54" label="SurveyCycle2C_cat"/>
+   <Parameter name="p55" label="SurveyCycle3C_cat"/>
+   <Parameter name="p56" label="SurveyCycle4C_cat"/>
+   <Parameter name="p57" label="SurveyCycle5C_cat"/>
+   <Parameter name="p58" label="SurveyCycle6C_cat"/>
+   <Parameter name="p59" label="NeedHelp1C_cat"/>
+   <Parameter name="p60" label="NeedHelp2C_cat"/>
+   <Parameter name="p61" label="NeedHelp3C_cat"/>
+   <Parameter name="p62" label="NeedHelp4C_cat"/>
+   <Parameter name="p63" label="NeedHelp5C_cat"/>
+   <Parameter name="p64" label="NeedHelp6C_cat"/>
+   <Parameter name="p65" label="AgeCXPackYearsC_int"/>
+   <Parameter name="p66" label="AgeCXSmokeFormer5PlusC_int"/>
+   <Parameter name="p67" label="AgeCXSmokeFormer0to5C_int"/>
+   <Parameter name="p68" label="AgeCXSmokeCurrentC_int"/>
+   <Parameter name="p69" label="AgeCXDrinksLastWeekC_int"/>
+   <Parameter name="p70" label="AgeCXFormerDrinkerC_int"/>
+   <Parameter name="p71" label="AgeCXFruitVegC_int"/>
+   <Parameter name="p72" label="AgeCXJuiceC_int"/>
+   <Parameter name="p73" label="AgeCXPotatoC_int"/>
+   <Parameter name="p74" label="AgeCXPhysicalActivityC_int"/>
+   <Parameter name="p75" label="AgeCXHeartDisC_int"/>
+   <Parameter name="p76" label="AgeCXStrokeC_int"/>
+   <Parameter name="p77" label="AgeCXDiabetesC_int"/>
+   <Parameter name="p78" label="AgeCXMoodC_int"/>
+   <Parameter name="p79" label="AgeCXHypertensionC_int"/>
+   <Parameter name="p80" label="AgeCXCOPDC_int"/>
+   <Parameter name="p81" label="AgeCXEpilepsyC_int"/>
+   <Parameter name="p82" label="AgeCXBMIC_int"/>
+   <Parameter name="p83" label="AgeCXNeedHelp1C_int"/>
+   <Parameter name="p84" label="AgeCXNeedHelp2C_int"/>
+   <Parameter name="p85" label="AgeCXNeedHelp3C_int"/>
+   <Parameter name="p86" label="AgeCXNeedHelp4C_int"/>
+   <Parameter name="p87" label="AgeCXNeedHelp5C_int"/>
+   <Parameter name="p88" label="AgeCXNeedHelp6C_int"/>
+  </ParameterList>
+  <FactorList>
+   <Predictor name="EthnSEAsian4C_cat"/>
+   <Predictor name="EthnOther4C_cat"/>
+   <Predictor name="EthnSWAsian4C_cat"/>
+   <Predictor name="ImmigrantC_cat"/>
+   <Predictor name="EduHSGrad2C_cat"/>
+   <Predictor name="EduSomePS2C_cat"/>
+   <Predictor name="EduPSGrad2C_cat"/>
+   <Predictor name="MSDivorcedC_cat"/>
+   <Predictor name="MSWidowedC_cat"/>
+   <Predictor name="MSSingleC_cat"/>
+   <Predictor name="MultilingualC_cat"/>
+   <Predictor name="DepIndModC_cat"/>
+   <Predictor name="DepIndHighC_cat"/>
+   <Predictor name="BelongSomeC_cat"/>
+   <Predictor name="BelongSWeakC_cat"/>
+   <Predictor name="BelongVWeakC_cat"/>
+   <Predictor name="StressNotVeryC_cat"/>
+   <Predictor name="StressABitC_cat"/>
+   <Predictor name="StressQuiteC_cat"/>
+   <Predictor name="StressExtreamlyC_cat"/>
+   <Predictor name="SRHealthPoorC_cat"/>
+   <Predictor name="SRHealthFairC_cat"/>
+   <Predictor name="SRHealthGoodC_cat"/>
+   <Predictor name="SRHealthVGoodC_cat"/>
+   <Predictor name="SmokeFormer5PlusC_cat"/>
+   <Predictor name="SmokeFormer0to5C_cat"/>
+   <Predictor name="SmokeCurrentC_cat"/>
+   <Predictor name="FormerDrinkerC_cat"/>
+   <Predictor name="HeartDisC_cat"/>
+   <Predictor name="StrokeC_cat"/>
+   <Predictor name="DiabetesC_cat"/>
+   <Predictor name="MoodC_cat"/>
+   <Predictor name="HypertensionC_cat"/>
+   <Predictor name="COPDC_cat"/>
+   <Predictor name="EpilepsyC_cat"/>
+   <Predictor name="SurveyCycle2C_cat"/>
+   <Predictor name="SurveyCycle3C_cat"/>
+   <Predictor name="SurveyCycle4C_cat"/>
+   <Predictor name="SurveyCycle5C_cat"/>
+   <Predictor name="SurveyCycle6C_cat"/>
+   <Predictor name="NeedHelp1C_cat"/>
+   <Predictor name="NeedHelp2C_cat"/>
+   <Predictor name="NeedHelp3C_cat"/>
+   <Predictor name="NeedHelp4C_cat"/>
+   <Predictor name="NeedHelp5C_cat"/>
+   <Predictor name="NeedHelp6C_cat"/>
+   <Predictor name="AgeCXSmokeFormer5PlusC_int"/>
+   <Predictor name="AgeCXSmokeFormer0to5C_int"/>
+   <Predictor name="AgeCXSmokeCurrentC_int"/>
+   <Predictor name="AgeCXFormerDrinkerC_int"/>
+   <Predictor name="AgeCXHeartDisC_int"/>
+   <Predictor name="AgeCXStrokeC_int"/>
+   <Predictor name="AgeCXDiabetesC_int"/>
+   <Predictor name="AgeCXMoodC_int"/>
+   <Predictor name="AgeCXHypertensionC_int"/>
+   <Predictor name="AgeCXCOPDC_int"/>
+   <Predictor name="AgeCXEpilepsyC_int"/>
+   <Predictor name="AgeCXNeedHelp1C_int"/>
+   <Predictor name="AgeCXNeedHelp2C_int"/>
+   <Predictor name="AgeCXNeedHelp3C_int"/>
+   <Predictor name="AgeCXNeedHelp4C_int"/>
+   <Predictor name="AgeCXNeedHelp5C_int"/>
+   <Predictor name="AgeCXNeedHelp6C_int"/>
+  </FactorList>
+  <CovariateList>
+   <Predictor name="AgeC_rcs1"/>
+   <Predictor name="AgeC_rcs2"/>
+   <Predictor name="AgeC_rcs3"/>
+   <Predictor name="AgeC_rcs4"/>
+   <Predictor name="PackYearsC_rcs1"/>
+   <Predictor name="PackYearsC_rcs2"/>
+   <Predictor name="DrinksLastWeekC_rcs1"/>
+   <Predictor name="DrinksLastWeekC_rcs2"/>
+   <Predictor name="FruitVegC_rcs1"/>
+   <Predictor name="FruitVegC_rcs2"/>
+   <Predictor name="PotatoC_rcs1"/>
+   <Predictor name="PotatoC_rcs2"/>
+   <Predictor name="JuiceC_rcs1"/>
+   <Predictor name="JuiceC_rcs2"/>
+   <Predictor name="PhysicalActivityC_rcs1"/>
+   <Predictor name="PhysicalActivityC_rcs2"/>
+   <Predictor name="BMIC_rcs1"/>
+   <Predictor name="BMIC_rcs2"/>
+   <Predictor name="AgeCXPackYearsC_int"/>
+   <Predictor name="AgeCXDrinksLastWeekC_int"/>
+   <Predictor name="AgeCXFruitVegC_int"/>
+   <Predictor name="AgeCXJuiceC_int"/>
+   <Predictor name="AgeCXPotatoC_int"/>
+   <Predictor name="AgeCXPhysicalActivityC_int"/>
+   <Predictor name="AgeCXBMIC_int"/>
+  </CovariateList>
+  <PPMatrix>
+   <PPCell value="1" predictorName="AgeC_rcs1" parameterName="p1"/>
+   <PPCell value="1" predictorName="AgeC_rcs2" parameterName="p2"/>
+   <PPCell value="1" predictorName="AgeC_rcs3" parameterName="p3"/>
+   <PPCell value="1" predictorName="AgeC_rcs4" parameterName="p4"/>
+   <PPCell value="1" predictorName="EthnSEAsian4C_cat" parameterName="p5"/>
+   <PPCell value="1" predictorName="EthnOther4C_cat" parameterName="p6"/>
+   <PPCell value="1" predictorName="EthnSWAsian4C_cat" parameterName="p7"/>
+   <PPCell value="1" predictorName="ImmigrantC_cat" parameterName="p8"/>
+   <PPCell value="1" predictorName="EduHSGrad2C_cat" parameterName="p9"/>
+   <PPCell value="1" predictorName="EduSomePS2C_cat" parameterName="p10"/>
+   <PPCell value="1" predictorName="EduPSGrad2C_cat" parameterName="p11"/>
+   <PPCell value="1" predictorName="MSDivorcedC_cat" parameterName="p12"/>
+   <PPCell value="1" predictorName="MSWidowedC_cat" parameterName="p13"/>
+   <PPCell value="1" predictorName="MSSingleC_cat" parameterName="p14"/>
+   <PPCell value="1" predictorName="MultilingualC_cat" parameterName="p15"/>
+   <PPCell value="1" predictorName="DepIndModC_cat" parameterName="p16"/>
+   <PPCell value="1" predictorName="DepIndHighC_cat" parameterName="p17"/>
+   <PPCell value="1" predictorName="BelongSomeC_cat" parameterName="p18"/>
+   <PPCell value="1" predictorName="BelongSWeakC_cat" parameterName="p19"/>
+   <PPCell value="1" predictorName="BelongVWeakC_cat" parameterName="p20"/>
+   <PPCell value="1" predictorName="StressNotVeryC_cat" parameterName="p21"/>
+   <PPCell value="1" predictorName="StressABitC_cat" parameterName="p22"/>
+   <PPCell value="1" predictorName="StressQuiteC_cat" parameterName="p23"/>
+   <PPCell value="1" predictorName="StressExtreamlyC_cat" parameterName="p24"/>
+   <PPCell value="1" predictorName="SRHealthPoorC_cat" parameterName="p25"/>
+   <PPCell value="1" predictorName="SRHealthFairC_cat" parameterName="p26"/>
+   <PPCell value="1" predictorName="SRHealthGoodC_cat" parameterName="p27"/>
+   <PPCell value="1" predictorName="SRHealthVGoodC_cat" parameterName="p28"/>
+   <PPCell value="1" predictorName="PackYearsC_rcs1" parameterName="p29"/>
+   <PPCell value="1" predictorName="PackYearsC_rcs2" parameterName="p30"/>
+   <PPCell value="1" predictorName="SmokeFormer5PlusC_cat" parameterName="p31"/>
+   <PPCell value="1" predictorName="SmokeFormer0to5C_cat" parameterName="p32"/>
+   <PPCell value="1" predictorName="SmokeCurrentC_cat" parameterName="p33"/>
+   <PPCell value="1" predictorName="DrinksLastWeekC_rcs1" parameterName="p34"/>
+   <PPCell value="1" predictorName="DrinksLastWeekC_rcs2" parameterName="p35"/>
+   <PPCell value="1" predictorName="FormerDrinkerC_cat" parameterName="p36"/>
+   <PPCell value="1" predictorName="FruitVegC_rcs1" parameterName="p37"/>
+   <PPCell value="1" predictorName="FruitVegC_rcs2" parameterName="p38"/>
+   <PPCell value="1" predictorName="PotatoC_rcs1" parameterName="p39"/>
+   <PPCell value="1" predictorName="PotatoC_rcs2" parameterName="p40"/>
+   <PPCell value="1" predictorName="JuiceC_rcs1" parameterName="p41"/>
+   <PPCell value="1" predictorName="JuiceC_rcs2" parameterName="p42"/>
+   <PPCell value="1" predictorName="PhysicalActivityC_rcs1" parameterName="p43"/>
+   <PPCell value="1" predictorName="PhysicalActivityC_rcs2" parameterName="p44"/>
+   <PPCell value="1" predictorName="HeartDisC_cat" parameterName="p45"/>
+   <PPCell value="1" predictorName="StrokeC_cat" parameterName="p46"/>
+   <PPCell value="1" predictorName="DiabetesC_cat" parameterName="p47"/>
+   <PPCell value="1" predictorName="MoodC_cat" parameterName="p48"/>
+   <PPCell value="1" predictorName="HypertensionC_cat" parameterName="p49"/>
+   <PPCell value="1" predictorName="COPDC_cat" parameterName="p50"/>
+   <PPCell value="1" predictorName="EpilepsyC_cat" parameterName="p51"/>
+   <PPCell value="1" predictorName="BMIC_rcs1" parameterName="p52"/>
+   <PPCell value="1" predictorName="BMIC_rcs2" parameterName="p53"/>
+   <PPCell value="1" predictorName="SurveyCycle2C_cat" parameterName="p54"/>
+   <PPCell value="1" predictorName="SurveyCycle3C_cat" parameterName="p55"/>
+   <PPCell value="1" predictorName="SurveyCycle4C_cat" parameterName="p56"/>
+   <PPCell value="1" predictorName="SurveyCycle5C_cat" parameterName="p57"/>
+   <PPCell value="1" predictorName="SurveyCycle6C_cat" parameterName="p58"/>
+   <PPCell value="1" predictorName="NeedHelp1C_cat" parameterName="p59"/>
+   <PPCell value="1" predictorName="NeedHelp2C_cat" parameterName="p60"/>
+   <PPCell value="1" predictorName="NeedHelp3C_cat" parameterName="p61"/>
+   <PPCell value="1" predictorName="NeedHelp4C_cat" parameterName="p62"/>
+   <PPCell value="1" predictorName="NeedHelp5C_cat" parameterName="p63"/>
+   <PPCell value="1" predictorName="NeedHelp6C_cat" parameterName="p64"/>
+   <PPCell value="1" predictorName="AgeCXPackYearsC_int" parameterName="p65"/>
+   <PPCell value="1" predictorName="AgeCXSmokeFormer5PlusC_int" parameterName="p66"/>
+   <PPCell value="1" predictorName="AgeCXSmokeFormer0to5C_int" parameterName="p67"/>
+   <PPCell value="1" predictorName="AgeCXSmokeCurrentC_int" parameterName="p68"/>
+   <PPCell value="1" predictorName="AgeCXDrinksLastWeekC_int" parameterName="p69"/>
+   <PPCell value="1" predictorName="AgeCXFormerDrinkerC_int" parameterName="p70"/>
+   <PPCell value="1" predictorName="AgeCXFruitVegC_int" parameterName="p71"/>
+   <PPCell value="1" predictorName="AgeCXJuiceC_int" parameterName="p72"/>
+   <PPCell value="1" predictorName="AgeCXPotatoC_int" parameterName="p73"/>
+   <PPCell value="1" predictorName="AgeCXPhysicalActivityC_int" parameterName="p74"/>
+   <PPCell value="1" predictorName="AgeCXHeartDisC_int" parameterName="p75"/>
+   <PPCell value="1" predictorName="AgeCXStrokeC_int" parameterName="p76"/>
+   <PPCell value="1" predictorName="AgeCXDiabetesC_int" parameterName="p77"/>
+   <PPCell value="1" predictorName="AgeCXMoodC_int" parameterName="p78"/>
+   <PPCell value="1" predictorName="AgeCXHypertensionC_int" parameterName="p79"/>
+   <PPCell value="1" predictorName="AgeCXCOPDC_int" parameterName="p80"/>
+   <PPCell value="1" predictorName="AgeCXEpilepsyC_int" parameterName="p81"/>
+   <PPCell value="1" predictorName="AgeCXBMIC_int" parameterName="p82"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp1C_int" parameterName="p83"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp2C_int" parameterName="p84"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp3C_int" parameterName="p85"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp4C_int" parameterName="p86"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp5C_int" parameterName="p87"/>
+   <PPCell value="1" predictorName="AgeCXNeedHelp6C_int" parameterName="p88"/>
+  </PPMatrix>
+  <ParamMatrix>
+   <PCell parameterName="p0" beta="0"/>
+   <PCell parameterName="p1" beta="0.245811442"/>
+   <PCell parameterName="p2" beta="-0.602259937"/>
+   <PCell parameterName="p3" beta="1.111993723"/>
+   <PCell parameterName="p4" beta="-0.839994054"/>
+   <PCell parameterName="p5" beta="-0.086445329"/>
+   <PCell parameterName="p6" beta="0.022782861"/>
+   <PCell parameterName="p7" beta="0.124444015"/>
+   <PCell parameterName="p8" beta="-0.039338602"/>
+   <PCell parameterName="p9" beta="-0.058628035"/>
+   <PCell parameterName="p10" beta="-0.11971784"/>
+   <PCell parameterName="p11" beta="-0.101779281"/>
+   <PCell parameterName="p12" beta="0.100381409"/>
+   <PCell parameterName="p13" beta="0.052282905"/>
+   <PCell parameterName="p14" beta="0.081491312"/>
+   <PCell parameterName="p15" beta="0.031286227"/>
+   <PCell parameterName="p16" beta="0.006387228"/>
+   <PCell parameterName="p17" beta="0.02427905"/>
+   <PCell parameterName="p18" beta="-0.015699015"/>
+   <PCell parameterName="p19" beta="0.050335437"/>
+   <PCell parameterName="p20" beta="0.038849086"/>
+   <PCell parameterName="p21" beta="-0.072801837"/>
+   <PCell parameterName="p22" beta="0.010911716"/>
+   <PCell parameterName="p23" beta="0.05241279"/>
+   <PCell parameterName="p24" beta="0.097635625"/>
+   <PCell parameterName="p25" beta="-0.004300496"/>
+   <PCell parameterName="p26" beta="0.000823883"/>
+   <PCell parameterName="p27" beta="0.072585593"/>
+   <PCell parameterName="p28" beta="0.06387516"/>
+   <PCell parameterName="p29" beta="0.006602825"/>
+   <PCell parameterName="p30" beta="-0.051379465"/>
+   <PCell parameterName="p31" beta="0.026782994"/>
+   <PCell parameterName="p32" beta="0.118058345"/>
+   <PCell parameterName="p33" beta="0.036175633"/>
+   <PCell parameterName="p34" beta="-0.026856739"/>
+   <PCell parameterName="p35" beta="0.025740269"/>
+   <PCell parameterName="p36" beta="0.129149448"/>
+   <PCell parameterName="p37" beta="-0.063047465"/>
+   <PCell parameterName="p38" beta="0.039612982"/>
+   <PCell parameterName="p39" beta="0.09986688"/>
+   <PCell parameterName="p40" beta="0.117436765"/>
+   <PCell parameterName="p41" beta="0.17033848"/>
+   <PCell parameterName="p42" beta="-0.042016202"/>
+   <PCell parameterName="p43" beta="-0.039363783"/>
+   <PCell parameterName="p44" beta="0.058783903"/>
+   <PCell parameterName="p45" beta="0.05359107"/>
+   <PCell parameterName="p46" beta="0.360768711"/>
+   <PCell parameterName="p47" beta="0.401003449"/>
+   <PCell parameterName="p48" beta="0.295548092"/>
+   <PCell parameterName="p49" beta="-0.007617754"/>
+   <PCell parameterName="p50" beta="-0.194624828"/>
+   <PCell parameterName="p51" beta="0.357491309"/>
+   <PCell parameterName="p52" beta="-0.040962277"/>
+   <PCell parameterName="p53" beta="0.016742361"/>
+   <PCell parameterName="p54" beta="0.020208886"/>
+   <PCell parameterName="p55" beta="-0.138972937"/>
+   <PCell parameterName="p56" beta="-0.226882704"/>
+   <PCell parameterName="p57" beta="-0.358420589"/>
+   <PCell parameterName="p58" beta="-0.457557168"/>
+   <PCell parameterName="p59" beta="0.241929347"/>
+   <PCell parameterName="p60" beta="0.369211789"/>
+   <PCell parameterName="p61" beta="0.442776235"/>
+   <PCell parameterName="p62" beta="0.43164512"/>
+   <PCell parameterName="p63" beta="0.300572591"/>
+   <PCell parameterName="p64" beta="0.598880471"/>
+   <PCell parameterName="p65" beta="-0.000155303"/>
+   <PCell parameterName="p66" beta="0.002104844"/>
+   <PCell parameterName="p67" beta="-0.007477601"/>
+   <PCell parameterName="p68" beta="-0.012096831"/>
+   <PCell parameterName="p69" beta="4.21e-05"/>
+   <PCell parameterName="p70" beta="-0.005996153"/>
+   <PCell parameterName="p71" beta="0.001695536"/>
+   <PCell parameterName="p72" beta="-0.007165992"/>
+   <PCell parameterName="p73" beta="-0.006942913"/>
+   <PCell parameterName="p74" beta="-0.001264883"/>
+   <PCell parameterName="p75" beta="-0.018019932"/>
+   <PCell parameterName="p76" beta="0.000249533"/>
+   <PCell parameterName="p77" beta="-0.024259478"/>
+   <PCell parameterName="p78" beta="-0.003014549"/>
+   <PCell parameterName="p79" beta="-0.01387805"/>
+   <PCell parameterName="p80" beta="-0.006590176"/>
+   <PCell parameterName="p81" beta="-0.035556937"/>
+   <PCell parameterName="p82" beta="0.000660283"/>
+   <PCell parameterName="p83" beta="-0.024212271"/>
+   <PCell parameterName="p84" beta="-0.016363282"/>
+   <PCell parameterName="p85" beta="-0.03652288"/>
+   <PCell parameterName="p86" beta="-0.025007238"/>
+   <PCell parameterName="p87" beta="-0.023608688"/>
+   <PCell parameterName="p88" beta="-0.0601175"/>
+  </ParamMatrix>
+  <BaseCumHazardTables maxTime="NA::b">
+   <BaselineCell time="5" cumHazard="0.08718073"/>
+  </BaseCumHazardTables>
+ </GeneralRegressionModel>
+</PMML>
