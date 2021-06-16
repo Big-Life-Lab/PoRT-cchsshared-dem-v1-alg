@@ -224,5 +224,5 @@ BMI_cont.fun <-
       metres <- cm / 100
     }
     
-    return(kgs / (metres * metres))
+    return(formatted_kgs / (metres * metres))
   }
