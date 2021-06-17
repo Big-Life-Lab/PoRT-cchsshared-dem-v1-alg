@@ -196,33 +196,38 @@ BMI_cont.fun <-
            cm,
            feetinches_feet,
            feetinches_inches) {
-    missing_bmi <- FALSE
-    if ((is.na(lbs) &
-         is.na(kgs)) |
-        (is.na(feetinches_feet) | is.na(feetinches_inches))) {
-      missing_bmi <- TRUE
-    }
-    
     formatted_kgs <- kgs
-    if (missing_bmi == TRUE) {
-      formatted_kgs <- NA
-    } else if (is.na(kgs)) {
-      formatted_kgs <- NA
-    } else {
+    if (!is.na(kgs)) {
+      formatted_kgs <- kgs
+    } else if(!is.na(lbs)) {
       formatted_kgs <- round((lbs / 2.2046), 2)
+    } else {
+      formatted_kgs <- NA
     }
     
     metres <- NA
-    if (missing_bmi) {
-      metres <- NA
-    } else if (is.na(cm)) {
+    if (!is.na(feetinches_feet) & !is.na(feetinches_inches)) {
       metres <-
         (round((
           feetinches_feet * 30.48 + feetinches_inches * 2.54
         ), 2)) / 100
-    } else {
+    } else if (!is.na(cm)) {
       metres <- cm / 100
+    } else {
+      metres <- NA
     }
     
     return(formatted_kgs / (metres * metres))
   }
+
+condition.fun <- function(cond_var, cond_none) {
+  if(cond_none == 'Y') {
+    return(0)
+  } else if(cond_var == 'Y') {
+    return(1)
+  } else if(cond_var == 'N') {
+    return(0)
+  } else {
+    return(NA)
+  }
+}
