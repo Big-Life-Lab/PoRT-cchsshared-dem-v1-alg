@@ -2,7 +2,7 @@
  <Header>
   <Application name="bllflow" version="0.1.0"/>
  </Header>
- <DataDictionary numberOfFields="52">
+ <DataDictionary numberOfFields="53">
   <DataField name="sex" displayName="Sex" optype="categorical" dataType="string">
    <Extension name="variableStartLabel" value="Sex:"/>
    <Value value="male" displayValue="Male" property="valid"/>
@@ -147,40 +147,45 @@
   <DataField name="ligact" displayName="In the past week, how much time did you spend doing light-intensity physical activities? (e.g., walking, cycling, gardening, exercise class, golfing, bowling, skating, fishing, baseball, tennis)" optype="continuous" dataType="float">
    <Extension name="variableStartLabel" value="In the past week, how much time did you spend doing light-intensity physical activities? (e.g., walking, cycling, gardening, exercise class, golfing, bowling, skating, fishing, baseball, tennis)"/>
   </DataField>
-  <DataField name="cond_hd" displayName="Which of the following conditions do you have? Heart Disease" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Heart Disease"/>
-   <Value value="Y" displayValue="Heart disease" property="valid"/>
-   <Value value="N" displayValue="No heart disease" property="valid"/>
+  <DataField name="cond_hd" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
-  <DataField name="cond_stk" displayName="Which of the following conditions do you have? Stroke" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Stroke"/>
-   <Value value="Y" displayValue="Stroke" property="valid"/>
-   <Value value="N" displayValue="No Stroke" property="valid"/>
+  <DataField name="cond_none" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
-  <DataField name="cond_diab" displayName="Which of the following conditions do you have? Diabetes" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Diabetes"/>
-   <Value value="Y" displayValue="Diabetes" property="valid"/>
-   <Value value="N" displayValue="No Diabetes" property="valid"/>
+  <DataField name="cond_stk" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
-  <DataField name="cond_mood" displayName="Which of the following conditions do you have? Mood Disorder" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Mood Disorder"/>
-   <Value value="Y" displayValue="Mood disorder" property="valid"/>
-   <Value value="N" displayValue="No mood disorder" property="valid"/>
+  <DataField name="cond_diab" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
-  <DataField name="hbp" displayName="Which of the following conditions do you have? Hypertension" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Hypertension"/>
-   <Value value="Y" displayValue="Hypertension" property="valid"/>
-   <Value value="N" displayValue="No hypertension" property="valid"/>
+  <DataField name="cond_mood" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
+  </DataField>
+  <DataField name="cond_hbp" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
   <DataField name="cond_copd" displayName="" optype="categorical" dataType="string">
    <Extension name="variableStartLabel" value=""/>
-   <Value value="Y" displayValue="COPD" property="valid"/>
-   <Value value="N" displayValue="No COPD" property="valid"/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
-  <DataField name="epil" displayName="Which of the following conditions do you have? Epilepsy" optype="categorical" dataType="string">
-   <Extension name="variableStartLabel" value="Which of the following conditions do you have? Epilepsy"/>
-   <Value value="Y" displayValue="Epilepsy" property="valid"/>
-   <Value value="N" displayValue="No epilepsy" property="valid"/>
+  <DataField name="cond_epil" displayName="" optype="categorical" dataType="string">
+   <Extension name="variableStartLabel" value=""/>
+   <Value value="Y" displayValue="" property="valid"/>
+   <Value value="N" displayValue="" property="valid"/>
   </DataField>
   <DataField name="lbs" displayName="Weight in Pounds" optype="continuous" dataType="float">
    <Extension name="variableStartLabel" value="Weight in Pounds"/>
@@ -1080,200 +1085,278 @@
    <Extension name="units" value="NA"/>
    <FieldRef field="ligact"/>
   </DerivedField>
-  <DerivedField name="HeartDis_cat" displayName="Heart Disease" optype="cat" dataType="string">
+  <DerivedField name="HeartDis" displayName="Heart Disease" optype="cat" dataType="string">
    <Extension name="labelLong" value="Has heart disease"/>
    <Extension name="units" value="N/A"/>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_hd_mut"/>
+    <FieldRef field="cond_none_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Heart disease">
+    <Extension name="catLabelLong" value="Heart disease"/>
+   </Value>
+   <Value value="0" displayValue="No heart disease">
+    <Extension name="catLabelLong" value="No heart disease"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="cond_hd_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
    <Apply function="if">
     <Apply function="equal">
      <FieldRef field="cond_hd"/>
      <Constant dataType="string">Y</Constant>
     </Apply>
-    <Constant dataType="integer">1</Constant>
+    <Constant dataType="string">Y</Constant>
     <Apply function="if">
      <Apply function="equal">
       <FieldRef field="cond_hd"/>
       <Constant dataType="string">N</Constant>
      </Apply>
-     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">N</Constant>
      <Constant dataType="string">NA::b</Constant>
     </Apply>
    </Apply>
-   <Value value="1" displayValue="Heart disease">
-    <Extension name="catLabelLong" value="Heart disease"/>
-   </Value>
-   <Value value="2" displayValue="No heart disease">
-    <Extension name="catLabelLong" value="No heart disease"/>
-   </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="Stroke_cat" displayName="Stroke" optype="cat" dataType="string">
+  <DerivedField name="cond_none_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_none"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_none"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="Stroke" displayName="Stroke" optype="cat" dataType="string">
    <Extension name="labelLong" value="Suffers from effects of a previous stroke"/>
    <Extension name="units" value="N/A"/>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_stk_mut"/>
+    <FieldRef field="cond_none_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Stroke">
+    <Extension name="catLabelLong" value="Stroke"/>
+   </Value>
+   <Value value="0" displayValue="No Stroke">
+    <Extension name="catLabelLong" value="No Stroke"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="cond_stk_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
    <Apply function="if">
     <Apply function="equal">
      <FieldRef field="cond_stk"/>
      <Constant dataType="string">Y</Constant>
     </Apply>
-    <Constant dataType="integer">1</Constant>
+    <Constant dataType="string">Y</Constant>
     <Apply function="if">
      <Apply function="equal">
       <FieldRef field="cond_stk"/>
       <Constant dataType="string">N</Constant>
      </Apply>
-     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">N</Constant>
      <Constant dataType="string">NA::b</Constant>
     </Apply>
    </Apply>
-   <Value value="1" displayValue="Stroke">
-    <Extension name="catLabelLong" value="Stroke"/>
-   </Value>
-   <Value value="2" displayValue="No Stroke">
-    <Extension name="catLabelLong" value="No Stroke"/>
-   </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="Diabetes_cat" displayName="Diabetes" optype="cat" dataType="string">
+  <DerivedField name="Diabetes" displayName="Diabetes" optype="cat" dataType="string">
    <Extension name="labelLong" value="Diabetes"/>
    <Extension name="units" value="N/A"/>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_diab_mut"/>
+    <FieldRef field="cond_none_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Diabetes">
+    <Extension name="catLabelLong" value="Diabetes"/>
+   </Value>
+   <Value value="0" displayValue="No Diabetes">
+    <Extension name="catLabelLong" value="No Diabetes"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="cond_diab_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
    <Apply function="if">
     <Apply function="equal">
      <FieldRef field="cond_diab"/>
      <Constant dataType="string">Y</Constant>
     </Apply>
-    <Constant dataType="integer">1</Constant>
+    <Constant dataType="string">Y</Constant>
     <Apply function="if">
      <Apply function="equal">
       <FieldRef field="cond_diab"/>
       <Constant dataType="string">N</Constant>
      </Apply>
-     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">N</Constant>
      <Constant dataType="string">NA::b</Constant>
     </Apply>
    </Apply>
-   <Value value="1" displayValue="Diabetes">
-    <Extension name="catLabelLong" value="Diabetes"/>
-   </Value>
-   <Value value="2" displayValue="No Diabetes">
-    <Extension name="catLabelLong" value="No Diabetes"/>
-   </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="Mood_cat" displayName="Has a mood disorder" optype="cat" dataType="string">
+  <DerivedField name="Mood" displayName="Has a mood disorder" optype="cat" dataType="string">
    <Extension name="labelLong" value="Has a mood disorder"/>
    <Extension name="units" value="N/A"/>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_mood_mut"/>
+    <FieldRef field="cond_none_mut"/>
+   </Apply>
+   <Value value="1" displayValue="Mood disorder">
+    <Extension name="catLabelLong" value="Mood disorder"/>
+   </Value>
+   <Value value="0" displayValue="No mood disorder">
+    <Extension name="catLabelLong" value="No mood disorder"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="cond_mood_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
    <Apply function="if">
     <Apply function="equal">
      <FieldRef field="cond_mood"/>
      <Constant dataType="string">Y</Constant>
     </Apply>
-    <Constant dataType="integer">1</Constant>
+    <Constant dataType="string">Y</Constant>
     <Apply function="if">
      <Apply function="equal">
       <FieldRef field="cond_mood"/>
       <Constant dataType="string">N</Constant>
      </Apply>
-     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">N</Constant>
      <Constant dataType="string">NA::b</Constant>
     </Apply>
    </Apply>
-   <Value value="1" displayValue="Mood disorder">
-    <Extension name="catLabelLong" value="Mood disorder"/>
-   </Value>
-   <Value value="2" displayValue="No mood disorder">
-    <Extension name="catLabelLong" value="No mood disorder"/>
-   </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="Hypertension_cat" displayName="Has hypertension" optype="cat" dataType="string">
+  <DerivedField name="Hypertension" displayName="Has hypertension" optype="cat" dataType="string">
    <Extension name="labelLong" value="Has hypertension"/>
    <Extension name="units" value="N/A"/>
-   <Apply function="if">
-    <Apply function="equal">
-     <FieldRef field="hbp"/>
-     <Constant dataType="string">Y</Constant>
-    </Apply>
-    <Constant dataType="integer">1</Constant>
-    <Apply function="if">
-     <Apply function="equal">
-      <FieldRef field="hbp"/>
-      <Constant dataType="string">N</Constant>
-     </Apply>
-     <Constant dataType="integer">2</Constant>
-     <Constant dataType="string">NA::b</Constant>
-    </Apply>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_hbp_mut"/>
+    <FieldRef field="cond_none_mut"/>
    </Apply>
    <Value value="1" displayValue="Hypertension">
     <Extension name="catLabelLong" value="Hypertension"/>
    </Value>
-   <Value value="2" displayValue="No hypertension">
+   <Value value="0" displayValue="No hypertension">
     <Extension name="catLabelLong" value="No hypertension"/>
    </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+  </DerivedField>
+  <DerivedField name="cond_hbp_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_hbp"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_hbp"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="COPD_cat" displayName="Has COPD" optype="cat" dataType="string">
+  <DerivedField name="COPD" displayName="Has COPD" optype="cat" dataType="string">
    <Extension name="labelLong" value="Has COPD, emphysema or chronic bronchitis"/>
    <Extension name="units" value="N/A"/>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_copd_mut"/>
+    <FieldRef field="cond_none_mut"/>
+   </Apply>
+   <Value value="1" displayValue="COPD">
+    <Extension name="catLabelLong" value="COPD"/>
+   </Value>
+   <Value value="0" displayValue="No COPD">
+    <Extension name="catLabelLong" value="No COPD"/>
+   </Value>
+  </DerivedField>
+  <DerivedField name="cond_copd_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
    <Apply function="if">
     <Apply function="equal">
      <FieldRef field="cond_copd"/>
      <Constant dataType="string">Y</Constant>
     </Apply>
-    <Constant dataType="integer">1</Constant>
+    <Constant dataType="string">Y</Constant>
     <Apply function="if">
      <Apply function="equal">
       <FieldRef field="cond_copd"/>
       <Constant dataType="string">N</Constant>
      </Apply>
-     <Constant dataType="integer">2</Constant>
+     <Constant dataType="string">N</Constant>
      <Constant dataType="string">NA::b</Constant>
     </Apply>
    </Apply>
-   <Value value="1" displayValue="COPD">
-    <Extension name="catLabelLong" value="COPD"/>
-   </Value>
-   <Value value="2" displayValue="No COPD">
-    <Extension name="catLabelLong" value="No COPD"/>
-   </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
-  <DerivedField name="Epilepsy_cat" displayName="Epilepsy" optype="cat" dataType="string">
+  <DerivedField name="Epilepsy" displayName="Epilepsy" optype="cat" dataType="string">
    <Extension name="labelLong" value="Has epilepsy"/>
    <Extension name="units" value="N/A"/>
-   <Apply function="if">
-    <Apply function="equal">
-     <FieldRef field="epil"/>
-     <Constant dataType="string">Y</Constant>
-    </Apply>
-    <Constant dataType="integer">1</Constant>
-    <Apply function="if">
-     <Apply function="equal">
-      <FieldRef field="epil"/>
-      <Constant dataType="string">N</Constant>
-     </Apply>
-     <Constant dataType="integer">2</Constant>
-     <Constant dataType="string">NA::b</Constant>
-    </Apply>
+   <Apply function="condition.fun">
+    <FieldRef field="cond_epil_mut"/>
+    <FieldRef field="cond_none_mut"/>
    </Apply>
    <Value value="1" displayValue="Epilepsy">
     <Extension name="catLabelLong" value="Epilepsy"/>
    </Value>
-   <Value value="2" displayValue="No epilepsy">
+   <Value value="0" displayValue="No epilepsy">
     <Extension name="catLabelLong" value="No epilepsy"/>
    </Value>
-   <Value value="NA::b" displayValue="Invalid">
-    <Extension name="catLabelLong" value="Invalid"/>
+  </DerivedField>
+  <DerivedField name="cond_epil_mut" displayName="NA" optype="NA" dataType="float">
+   <Extension name="labelLong" value="NA"/>
+   <Extension name="units" value="NA"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_epil"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="string">Y</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_epil"/>
+      <Constant dataType="string">N</Constant>
+     </Apply>
+     <Constant dataType="string">N</Constant>
+     <Constant dataType="string">NA::b</Constant>
+    </Apply>
+   </Apply>
+   <Value value="NA::b" displayValue="">
+    <Extension name="catLabelLong" value=""/>
    </Value>
   </DerivedField>
   <DerivedField name="BMI_cont" displayName="Body mass index" optype="cont" dataType="float">
@@ -1581,16 +1664,18 @@
    <Apply function="if">
     <Apply function="or">
      <Apply function="or">
-      <Apply function="is.na">
+      <Apply function="equal">
        <FieldRef field="smokingstat"/>
+       <Constant dataType="string">NA::b</Constant>
       </Apply>
       <Apply function="and">
        <Apply function="equal">
         <FieldRef field="smokingstat"/>
         <Constant dataType="string">A2</Constant>
        </Apply>
-       <Apply function="is.na">
+       <Apply function="equal">
         <FieldRef field="lessdaily"/>
+        <Constant dataType="string">NA::b</Constant>
        </Apply>
       </Apply>
      </Apply>
@@ -1599,8 +1684,9 @@
        <FieldRef field="smokingstat"/>
        <Constant dataType="string">A3</Constant>
       </Apply>
-      <Apply function="is.na">
+      <Apply function="equal">
        <FieldRef field="pastsmoke"/>
+       <Constant dataType="string">NA::b</Constant>
       </Apply>
      </Apply>
     </Apply>
@@ -1673,8 +1759,9 @@
    <Apply function="if">
     <Apply function="or">
      <Apply function="or">
-      <Apply function="is.na">
+      <Apply function="equal">
        <FieldRef field="TypeOfSmoker2"/>
+       <Constant dataType="string">NA::a</Constant>
       </Apply>
       <Apply function="and">
        <Apply function="equal">
@@ -1772,8 +1859,9 @@
     <Apply function="or">
      <Apply function="or">
       <Apply function="or">
-       <Apply function="is.na">
+       <Apply function="equal">
         <FieldRef field="TypeOfSmoker2"/>
+        <Constant dataType="string">NA::a</Constant>
        </Apply>
        <Apply function="and">
         <Apply function="equal">
@@ -2355,43 +2443,6 @@
     </Apply>
    </Apply>
   </DefineFunction>
-  <DefineFunction name="BMI_cont.fun(missing_bmi)">
-   <ParameterField name="lbs" dataType="double"/>
-   <ParameterField name="kgs" dataType="double"/>
-   <ParameterField name="cm" dataType="double"/>
-   <ParameterField name="feetinches_feet" dataType="double"/>
-   <ParameterField name="feetinches_inches" dataType="double"/>
-   <Constant dataType="boolean">false</Constant>
-  </DefineFunction>
-  <DefineFunction name="BMI_cont.fun(missing_bmi)">
-   <ParameterField name="lbs" dataType="double"/>
-   <ParameterField name="kgs" dataType="double"/>
-   <ParameterField name="cm" dataType="double"/>
-   <ParameterField name="feetinches_feet" dataType="double"/>
-   <ParameterField name="feetinches_inches" dataType="double"/>
-   <Apply function="if">
-    <Apply function="or">
-     <Apply function="and">
-      <Apply function="is.na">
-       <FieldRef field="lbs"/>
-      </Apply>
-      <Apply function="is.na">
-       <FieldRef field="kgs"/>
-      </Apply>
-     </Apply>
-     <Apply function="or">
-      <Apply function="is.na">
-       <FieldRef field="feetinches_feet"/>
-      </Apply>
-      <Apply function="is.na">
-       <FieldRef field="feetinches_inches"/>
-      </Apply>
-     </Apply>
-    </Apply>
-    <Constant dataType="boolean">true</Constant>
-    <Constant dataType="NULL">NULL</Constant>
-   </Apply>
-  </DefineFunction>
   <DefineFunction name="BMI_cont.fun(formatted_kgs)">
    <ParameterField name="lbs" dataType="double"/>
    <ParameterField name="kgs" dataType="double"/>
@@ -2407,22 +2458,18 @@
    <ParameterField name="feetinches_feet" dataType="double"/>
    <ParameterField name="feetinches_inches" dataType="double"/>
    <Apply function="if">
-    <Apply function="equal">
-     <Apply function="BMI_cont.fun(missing_bmi)">
-      <FieldRef field="lbs"/>
-      <FieldRef field="kgs"/>
-      <FieldRef field="cm"/>
-      <FieldRef field="feetinches_feet"/>
-      <FieldRef field="feetinches_inches"/>
-     </Apply>
-     <Constant dataType="boolean">true</Constant>
-    </Apply>
-    <Constant dataType="NA">NA</Constant>
-    <Apply function="if">
+    <Apply function="not">
      <Apply function="is.na">
       <FieldRef field="kgs"/>
      </Apply>
-     <Constant dataType="NA">NA</Constant>
+    </Apply>
+    <FieldRef field="kgs"/>
+    <Apply function="if">
+     <Apply function="not">
+      <Apply function="is.na">
+       <FieldRef field="lbs"/>
+      </Apply>
+     </Apply>
      <Apply function="round">
       <Apply function="/">
        <FieldRef field="lbs"/>
@@ -2430,6 +2477,7 @@
       </Apply>
       <Constant dataType="double">2</Constant>
      </Apply>
+     <Constant dataType="NA">NA</Constant>
     </Apply>
    </Apply>
   </DefineFunction>
@@ -2448,38 +2496,45 @@
    <ParameterField name="feetinches_feet" dataType="double"/>
    <ParameterField name="feetinches_inches" dataType="double"/>
    <Apply function="if">
-    <Apply function="BMI_cont.fun(missing_bmi)">
-     <FieldRef field="lbs"/>
-     <FieldRef field="kgs"/>
-     <FieldRef field="cm"/>
-     <FieldRef field="feetinches_feet"/>
-     <FieldRef field="feetinches_inches"/>
-    </Apply>
-    <Constant dataType="NA">NA</Constant>
-    <Apply function="if">
-     <Apply function="is.na">
-      <FieldRef field="cm"/>
-     </Apply>
-     <Apply function="/">
-      <Apply function="round">
-       <Apply function="+">
-        <Apply function="*">
-         <FieldRef field="feetinches_feet"/>
-         <Constant dataType="double">30.48</Constant>
-        </Apply>
-        <Apply function="*">
-         <FieldRef field="feetinches_inches"/>
-         <Constant dataType="double">2.54</Constant>
-        </Apply>
-       </Apply>
-       <Constant dataType="double">2</Constant>
+    <Apply function="and">
+     <Apply function="not">
+      <Apply function="is.na">
+       <FieldRef field="feetinches_feet"/>
       </Apply>
-      <Constant dataType="double">100</Constant>
+     </Apply>
+     <Apply function="not">
+      <Apply function="is.na">
+       <FieldRef field="feetinches_inches"/>
+      </Apply>
+     </Apply>
+    </Apply>
+    <Apply function="/">
+     <Apply function="round">
+      <Apply function="+">
+       <Apply function="*">
+        <FieldRef field="feetinches_feet"/>
+        <Constant dataType="double">30.48</Constant>
+       </Apply>
+       <Apply function="*">
+        <FieldRef field="feetinches_inches"/>
+        <Constant dataType="double">2.54</Constant>
+       </Apply>
+      </Apply>
+      <Constant dataType="double">2</Constant>
+     </Apply>
+     <Constant dataType="double">100</Constant>
+    </Apply>
+    <Apply function="if">
+     <Apply function="not">
+      <Apply function="is.na">
+       <FieldRef field="cm"/>
+      </Apply>
      </Apply>
      <Apply function="/">
       <FieldRef field="cm"/>
       <Constant dataType="double">100</Constant>
      </Apply>
+     <Constant dataType="NA">NA</Constant>
     </Apply>
    </Apply>
   </DefineFunction>
@@ -2490,7 +2545,13 @@
    <ParameterField name="feetinches_feet" dataType="double"/>
    <ParameterField name="feetinches_inches" dataType="double"/>
    <Apply function="/">
-    <FieldRef field="kgs"/>
+    <Apply function="BMI_cont.fun(formatted_kgs)">
+     <FieldRef field="lbs"/>
+     <FieldRef field="kgs"/>
+     <FieldRef field="cm"/>
+     <FieldRef field="feetinches_feet"/>
+     <FieldRef field="feetinches_inches"/>
+    </Apply>
     <Apply function="*">
      <Apply function="BMI_cont.fun(metres)">
       <FieldRef field="lbs"/>
@@ -2505,6 +2566,32 @@
       <FieldRef field="cm"/>
       <FieldRef field="feetinches_feet"/>
       <FieldRef field="feetinches_inches"/>
+     </Apply>
+    </Apply>
+   </Apply>
+  </DefineFunction>
+  <DefineFunction name="condition.fun">
+   <ParameterField name="cond_var" dataType="double"/>
+   <ParameterField name="cond_none" dataType="double"/>
+   <Apply function="if">
+    <Apply function="equal">
+     <FieldRef field="cond_none"/>
+     <Constant dataType="string">Y</Constant>
+    </Apply>
+    <Constant dataType="double">0</Constant>
+    <Apply function="if">
+     <Apply function="equal">
+      <FieldRef field="cond_var"/>
+      <Constant dataType="string">Y</Constant>
+     </Apply>
+     <Constant dataType="double">1</Constant>
+     <Apply function="if">
+      <Apply function="equal">
+       <FieldRef field="cond_var"/>
+       <Constant dataType="string">N</Constant>
+      </Apply>
+      <Constant dataType="double">0</Constant>
+      <Constant dataType="NA">NA</Constant>
      </Apply>
     </Apply>
    </Apply>
@@ -3435,7 +3522,7 @@
     <Constant dataType="float">0.388</Constant>
    </Apply>
   </DerivedField>
-  <DerivedField name="EpilespyC_cat" optype="categorical" dataType="string">
+  <DerivedField name="EpilepsyC_cat" optype="categorical" dataType="string">
    <Apply function="-">
     <FieldRef field="Epilepsy_cat"/>
     <Constant dataType="float">0.00526</Constant>
@@ -3788,13 +3875,14 @@
    <MiningField name="vigact" usageType="active"/>
    <MiningField name="modact" usageType="active"/>
    <MiningField name="ligact" usageType="active"/>
+   <MiningField name="cond_none" usageType="active"/>
    <MiningField name="cond_copd" usageType="active"/>
    <MiningField name="cond_hd" usageType="active"/>
    <MiningField name="cond_stk" usageType="active"/>
    <MiningField name="cond_diab" usageType="active"/>
    <MiningField name="cond_mood" usageType="active"/>
-   <MiningField name="hbp" usageType="active"/>
-   <MiningField name="epil" usageType="active"/>
+   <MiningField name="cond_hbp" usageType="active"/>
+   <MiningField name="cond_epil" usageType="active"/>
    <MiningField name="lbs" usageType="active"/>
    <MiningField name="kgs" usageType="active"/>
    <MiningField name="cm" usageType="active"/>

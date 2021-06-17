@@ -2363,10 +2363,11 @@
         },
         {
             "fieldType": 1,
-            "name": "HeartDis_cat",
-            "equation": "derived = obj['cond_hd'] == 'Y' ? 1 : obj['cond_hd'] == 'N' ? 2 : 'NA::b';",
+            "name": "HeartDis",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_hd_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
             "derivedFrom": [
-                "cond_hd"
+                "cond_hd_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2382,22 +2383,60 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No heart disease"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "Stroke_cat",
-            "equation": "derived = obj['cond_stk'] == 'Y' ? 1 : obj['cond_stk'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_hd_mut",
+            "equation": "derived = obj['cond_hd'] == 'Y' ? 'Y' : obj['cond_hd'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "cond_stk"
+                "cond_hd"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "cond_none_mut",
+            "equation": "derived = obj['cond_none'] == 'Y' ? 'Y' : obj['cond_none'] == 'N' ? 'N' : 'NA::b';",
+            "derivedFrom": [
+                "cond_none"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "Stroke",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_stk_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_stk_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2413,22 +2452,39 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No Stroke"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "Diabetes_cat",
-            "equation": "derived = obj['cond_diab'] == 'Y' ? 1 : obj['cond_diab'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_stk_mut",
+            "equation": "derived = obj['cond_stk'] == 'Y' ? 'Y' : obj['cond_stk'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "cond_diab"
+                "cond_stk"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "Diabetes",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_diab_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_diab_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2444,22 +2500,39 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No Diabetes"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "Mood_cat",
-            "equation": "derived = obj['cond_mood'] == 'Y' ? 1 : obj['cond_mood'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_diab_mut",
+            "equation": "derived = obj['cond_diab'] == 'Y' ? 'Y' : obj['cond_diab'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "cond_mood"
+                "cond_diab"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "Mood",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_mood_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_mood_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2475,22 +2548,39 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No mood disorder"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "Hypertension_cat",
-            "equation": "derived = obj['hbp'] == 'Y' ? 1 : obj['hbp'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_mood_mut",
+            "equation": "derived = obj['cond_mood'] == 'Y' ? 'Y' : obj['cond_mood'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "hbp"
+                "cond_mood"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "Hypertension",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_hbp_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_hbp_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2506,22 +2596,39 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No hypertension"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "COPD_cat",
-            "equation": "derived = obj['cond_copd'] == 'Y' ? 1 : obj['cond_copd'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_hbp_mut",
+            "equation": "derived = obj['cond_hbp'] == 'Y' ? 'Y' : obj['cond_hbp'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "cond_copd"
+                "cond_hbp"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "COPD",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_copd_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_copd_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2537,22 +2644,39 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No COPD"
-                },
-                {
-                    "description": "",
-                    "value": "NA::b",
-                    "displayValue": "Invalid"
                 }
             ]
         },
         {
             "fieldType": 1,
-            "name": "Epilepsy_cat",
-            "equation": "derived = obj['epil'] == 'Y' ? 1 : obj['epil'] == 'N' ? 2 : 'NA::b';",
+            "name": "cond_copd_mut",
+            "equation": "derived = obj['cond_copd'] == 'Y' ? 'Y' : obj['cond_copd'] == 'N' ? 'N' : 'NA::b';",
             "derivedFrom": [
-                "epil"
+                "cond_copd"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
+                {
+                    "description": "",
+                    "value": "NA::b",
+                    "displayValue": ""
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "Epilepsy",
+            "equation": "derived = userFunctions['condition.fun'](obj['cond_epil_mut'], obj['cond_none_mut'], userFunctions, func, tables);",
+            "derivedFrom": [
+                "cond_epil_mut",
+                "cond_none_mut"
             ],
             "isRequired": false,
             "isRecommended": false,
@@ -2568,13 +2692,29 @@
                 },
                 {
                     "description": "",
-                    "value": "2",
+                    "value": "0",
                     "displayValue": "No epilepsy"
-                },
+                }
+            ]
+        },
+        {
+            "fieldType": 1,
+            "name": "cond_epil_mut",
+            "equation": "derived = obj['cond_epil'] == 'Y' ? 'Y' : obj['cond_epil'] == 'N' ? 'N' : 'NA::b';",
+            "derivedFrom": [
+                "cond_epil"
+            ],
+            "isRequired": false,
+            "isRecommended": false,
+            "metadata": {
+                "label": "NA",
+                "shortLabel": ""
+            },
+            "categories": [
                 {
                     "description": "",
                     "value": "NA::b",
-                    "displayValue": "Invalid"
+                    "displayValue": ""
                 }
             ]
         },
@@ -4575,7 +4715,7 @@
         },
         {
             "fieldType": 1,
-            "name": "EpilespyC_cat",
+            "name": "EpilepsyC_cat",
             "equation": "derived = obj['Epilepsy_cat'] - 0.00526;",
             "derivedFrom": [
                 "Epilepsy_cat"
@@ -6074,8 +6214,8 @@
             "fieldType": 0,
             "name": "cond_hd",
             "metadata": {
-                "label": "Which of the following conditions do you have? Heart Disease",
-                "shortLabel": "Which of the following conditions do you have? Heart Disease"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6083,12 +6223,35 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Heart disease"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No heart disease"
+                    "displayValue": ""
+                }
+            ],
+            "intervals": []
+        },
+        {
+            "fieldType": 0,
+            "name": "cond_none",
+            "metadata": {
+                "label": "",
+                "shortLabel": ""
+            },
+            "isRecommended": false,
+            "isRequired": false,
+            "categories": [
+                {
+                    "description": "",
+                    "value": "Y",
+                    "displayValue": ""
+                },
+                {
+                    "description": "",
+                    "value": "N",
+                    "displayValue": ""
                 }
             ],
             "intervals": []
@@ -6097,8 +6260,8 @@
             "fieldType": 0,
             "name": "cond_stk",
             "metadata": {
-                "label": "Which of the following conditions do you have? Stroke",
-                "shortLabel": "Which of the following conditions do you have? Stroke"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6106,12 +6269,12 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Stroke"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No Stroke"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
@@ -6120,8 +6283,8 @@
             "fieldType": 0,
             "name": "cond_diab",
             "metadata": {
-                "label": "Which of the following conditions do you have? Diabetes",
-                "shortLabel": "Which of the following conditions do you have? Diabetes"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6129,12 +6292,12 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Diabetes"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No Diabetes"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
@@ -6143,8 +6306,8 @@
             "fieldType": 0,
             "name": "cond_mood",
             "metadata": {
-                "label": "Which of the following conditions do you have? Mood Disorder",
-                "shortLabel": "Which of the following conditions do you have? Mood Disorder"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6152,22 +6315,22 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Mood disorder"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No mood disorder"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
         },
         {
             "fieldType": 0,
-            "name": "hbp",
+            "name": "cond_hbp",
             "metadata": {
-                "label": "Which of the following conditions do you have? Hypertension",
-                "shortLabel": "Which of the following conditions do you have? Hypertension"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6175,12 +6338,12 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Hypertension"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No hypertension"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
@@ -6198,22 +6361,22 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "COPD"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No COPD"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
         },
         {
             "fieldType": 0,
-            "name": "epil",
+            "name": "cond_epil",
             "metadata": {
-                "label": "Which of the following conditions do you have? Epilepsy",
-                "shortLabel": "Which of the following conditions do you have? Epilepsy"
+                "label": "",
+                "shortLabel": ""
             },
             "isRecommended": false,
             "isRequired": false,
@@ -6221,12 +6384,12 @@
                 {
                     "description": "",
                     "value": "Y",
-                    "displayValue": "Epilepsy"
+                    "displayValue": ""
                 },
                 {
                     "description": "",
                     "value": "N",
-                    "displayValue": "No epilepsy"
+                    "displayValue": ""
                 }
             ],
             "intervals": []
@@ -6521,9 +6684,9 @@
         }
     ],
     "userFunctions": {
-        "TypeOfSmoker2.fun": "\n        userFunctions[\"TypeOfSmoker2.fun\"] = (function (smokingstat, lessdaily, pastsmoke, userFunctions, func, tables) {\n    return func['is.na'](smokingstat) || smokingstat == 'A2' && func['is.na'](lessdaily) || smokingstat == 'A3' && func['is.na'](pastsmoke) ? 'NA::a' : smokingstat == 'A1' ? 1 : smokingstat == 'A2' && lessdaily == 'yless' ? 2 : smokingstat == 'A2' && lessdaily == 'nless' ? 3 : smokingstat == 'A3' && pastsmoke == 'dal' ? 4 : smokingstat == 'A3' && pastsmoke == 'dal2' ? 5 : 6;\n})\n    ",
-        "SmokeSimple.fun": "\n        userFunctions[\"SmokeSimple.fun\"] = (function (TypeOfSmoker2, tsq5, userFunctions, func, tables) {\n    return func['is.na'](TypeOfSmoker2) || TypeOfSmoker2 == 4 && func['is.na'](tsq5) || TypeOfSmoker2 == 5 && func['is.na'](tsq5) ? 'NA::a' : TypeOfSmoker2 == 6 ? 1 : TypeOfSmoker2 == 4 && tsq5 == 'more5' || TypeOfSmoker2 == 5 && tsq5 == 'more5' ? 2 : TypeOfSmoker2 == 4 && tsq5 == 'less5' || TypeOfSmoker2 == 4 && tsq5 == 'less5' ? 3 : 4;\n})\n    ",
-        "PackYears_cont.fun": "\n        userFunctions[\"PackYears_cont.fun\"] = (function (TypeOfSmoker2, Age_cont, dailyage, dailycig, stopdaily, dailyage2, dailycig3, stopdaily2, dailyage3, dailycig4, userFunctions, func, tables) {\n    return func['is.na'](TypeOfSmoker2) || TypeOfSmoker2 == 1 && (func['is.na'](dailyage) || func['is.na'](dailycig)) || TypeOfSmoker2 == 2 && (func['is.na'](stopdaily) || func['is.na'](dailyage2) || func['is.na'](dailycig3)) || TypeOfSmoker2 == 4 && (func['is.na'](stopdaily2) || func['is.na'](dailyage3) || func['is.na'](dailycig4)) ? undefined : TypeOfSmoker2 == 1 ? (Age_cont - dailyage) * (dailycig / 20) : TypeOfSmoker2 == 2 ? (stopdaily - dailyage2) * (dailycig3 / 20) : TypeOfSmoker2 == 3 ? 0 : TypeOfSmoker2 == 4 ? (stopdaily2 - dailyage3) * (dailycig4 / 20) : 0;\n})\n    ",
+        "TypeOfSmoker2.fun": "\n        userFunctions[\"TypeOfSmoker2.fun\"] = (function (smokingstat, lessdaily, pastsmoke, userFunctions, func, tables) {\n    return smokingstat == 'NA::b' || smokingstat == 'A2' && lessdaily == 'NA::b' || smokingstat == 'A3' && pastsmoke == 'NA::b' ? 'NA::a' : smokingstat == 'A1' ? 1 : smokingstat == 'A2' && lessdaily == 'yless' ? 2 : smokingstat == 'A2' && lessdaily == 'nless' ? 3 : smokingstat == 'A3' && pastsmoke == 'dal' ? 4 : smokingstat == 'A3' && pastsmoke == 'dal2' ? 5 : 6;\n})\n    ",
+        "SmokeSimple.fun": "\n        userFunctions[\"SmokeSimple.fun\"] = (function (TypeOfSmoker2, tsq5, userFunctions, func, tables) {\n    return TypeOfSmoker2 == 'NA::a' || TypeOfSmoker2 == 4 && func['is.na'](tsq5) || TypeOfSmoker2 == 5 && func['is.na'](tsq5) ? 'NA::a' : TypeOfSmoker2 == 6 ? 1 : TypeOfSmoker2 == 4 && tsq5 == 'more5' || TypeOfSmoker2 == 5 && tsq5 == 'more5' ? 2 : TypeOfSmoker2 == 4 && tsq5 == 'less5' || TypeOfSmoker2 == 4 && tsq5 == 'less5' ? 3 : 4;\n})\n    ",
+        "PackYears_cont.fun": "\n        userFunctions[\"PackYears_cont.fun\"] = (function (TypeOfSmoker2, Age_cont, dailyage, dailycig, stopdaily, dailyage2, dailycig3, stopdaily2, dailyage3, dailycig4, userFunctions, func, tables) {\n    return TypeOfSmoker2 == 'NA::a' || TypeOfSmoker2 == 1 && (func['is.na'](dailyage) || func['is.na'](dailycig)) || TypeOfSmoker2 == 2 && (func['is.na'](stopdaily) || func['is.na'](dailyage2) || func['is.na'](dailycig3)) || TypeOfSmoker2 == 4 && (func['is.na'](stopdaily2) || func['is.na'](dailyage3) || func['is.na'](dailycig4)) ? undefined : TypeOfSmoker2 == 1 ? (Age_cont - dailyage) * (dailycig / 20) : TypeOfSmoker2 == 2 ? (stopdaily - dailyage2) * (dailycig3 / 20) : TypeOfSmoker2 == 3 ? 0 : TypeOfSmoker2 == 4 ? (stopdaily2 - dailyage3) * (dailycig4 / 20) : 0;\n})\n    ",
         "FormerDrinker.fun": "\n        userFunctions[\"FormerDrinker.fun\"] = (function (drk, evdk, userFunctions, func, tables) {\n    return func['is.na'](drk) ? 'NA::a' : drk == 0 && evdk == 'evdk2' ? 1 : drk == 0 && evdk == 'evdk1' ? 2 : 'NA::a';\n})\n    ",
         "FruitVeg_cont.fun": "\n        userFunctions[\"FruitVeg_cont.fun\"] = (function (fv_fruit1, fv_veg1, userFunctions, func, tables) {\n    return (fv_fruit1 + fv_veg1) / 7;\n})\n    ",
         "Potato_cont.fun": "\n        userFunctions[\"Potato_cont.fun\"] = (function (fv_pot1, userFunctions, func, tables) {\n    return fv_pot1 / 7;\n})\n    ",
@@ -6540,10 +6703,10 @@
         "NeedHelp.fun(mov)": "\n        userFunctions[\"NeedHelp.fun(mov)\"] = (function (needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) {\n    return needhelp_mov == 'Y' ? 1 : needhelp_mov == 'N' ? 0 : null;\n})\n    ",
         "NeedHelp.fun(fina)": "\n        userFunctions[\"NeedHelp.fun(fina)\"] = (function (needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) {\n    return needhelp_fina == 'Y' ? 1 : needhelp_fina == 'N' ? 0 : null;\n})\n    ",
         "NeedHelp.fun": "\n        userFunctions[\"NeedHelp.fun\"] = (function (needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) {\n    return needhelp_none == 'Y' ? 0 : func['sum'](userFunctions['NeedHelp.fun(meals)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) + userFunctions['NeedHelp.fun(errands)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) + userFunctions['NeedHelp.fun(hw)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) + userFunctions['NeedHelp.fun(pcare)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) + userFunctions['NeedHelp.fun(mov)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables) + userFunctions['NeedHelp.fun(fina)'](needhelp_meals, needhelp_errands, needhelp_hw, needhelp_pcare, needhelp_mov, needhelp_fina, needhelp_none, userFunctions, func, tables));\n})\n    ",
-        "BMI_cont.fun(missing_bmi)": "\n        userFunctions[\"BMI_cont.fun(missing_bmi)\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return func['is.na'](lbs) && func['is.na'](kgs) || (func['is.na'](feetinches_feet) || func['is.na'](feetinches_inches)) ? true : null;\n})\n    ",
-        "BMI_cont.fun(formatted_kgs)": "\n        userFunctions[\"BMI_cont.fun(formatted_kgs)\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return userFunctions['BMI_cont.fun(missing_bmi)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) == true ? undefined : func['is.na'](kgs) ? undefined : func['round'](lbs / 2.2046, 2);\n})\n    ",
-        "BMI_cont.fun(metres)": "\n        userFunctions[\"BMI_cont.fun(metres)\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return userFunctions['BMI_cont.fun(missing_bmi)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) ? undefined : func['is.na'](cm) ? func['round'](feetinches_feet * 30.48 + feetinches_inches * 2.54, 2) / 100 : cm / 100;\n})\n    ",
-        "BMI_cont.fun": "\n        userFunctions[\"BMI_cont.fun\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return kgs / (userFunctions['BMI_cont.fun(metres)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) * userFunctions['BMI_cont.fun(metres)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables));\n})\n    "
+        "BMI_cont.fun(formatted_kgs)": "\n        userFunctions[\"BMI_cont.fun(formatted_kgs)\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return func['not'](func['is.na'](kgs)) ? kgs : func['not'](func['is.na'](lbs)) ? func['round'](lbs / 2.2046, 2) : undefined;\n})\n    ",
+        "BMI_cont.fun(metres)": "\n        userFunctions[\"BMI_cont.fun(metres)\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return func['not'](func['is.na'](feetinches_feet)) && func['not'](func['is.na'](feetinches_inches)) ? func['round'](feetinches_feet * 30.48 + feetinches_inches * 2.54, 2) / 100 : func['not'](func['is.na'](cm)) ? cm / 100 : undefined;\n})\n    ",
+        "BMI_cont.fun": "\n        userFunctions[\"BMI_cont.fun\"] = (function (lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) {\n    return userFunctions['BMI_cont.fun(formatted_kgs)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) / (userFunctions['BMI_cont.fun(metres)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables) * userFunctions['BMI_cont.fun(metres)'](lbs, kgs, cm, feetinches_feet, feetinches_inches, userFunctions, func, tables));\n})\n    ",
+        "condition.fun": "\n        userFunctions[\"condition.fun\"] = (function (cond_var, cond_none, userFunctions, func, tables) {\n    return cond_none == 'Y' ? 0 : cond_var == 'Y' ? 1 : cond_var == 'N' ? 0 : undefined;\n})\n    "
     },
     "tables": {},
     "timeMetric": "years"
