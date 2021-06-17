@@ -1,7 +1,7 @@
 TypeOfSmoker2.fun <- function(smokingstat, lessdaily, pastsmoke) {
-  if (is.na(smokingstat) | smokingstat == 'A2' &
-      is.na(lessdaily) | smokingstat == 'A3' &
-      is.na(pastsmoke)) {
+  if (smokingstat == 'NA::b' | smokingstat == 'A2' &
+      lessdaily == 'NA::b' | smokingstat == 'A3' &
+      pastsmoke == 'NA::b') {
     return("NA::a")
   }
   # Current daily smoker
@@ -29,7 +29,7 @@ TypeOfSmoker2.fun <- function(smokingstat, lessdaily, pastsmoke) {
 }
 
 SmokeSimple.fun <- function(TypeOfSmoker2, tsq5) {
-  if (is.na(TypeOfSmoker2) |
+  if (TypeOfSmoker2 == 'NA::a' |
       (TypeOfSmoker2 == 4 &
        is.na(tsq5)) | (TypeOfSmoker2 == 5 & is.na(tsq5))) {
     return("NA::a")
@@ -63,7 +63,7 @@ PackYears_cont.fun <-
            dailyage3,
            dailycig4) {
     if ((
-      is.na(TypeOfSmoker2) |
+      TypeOfSmoker2 == "NA::a" |
       TypeOfSmoker2 == 1 & (is.na(dailyage) | is.na(dailycig))
       |
       TypeOfSmoker2 == 2 &
