@@ -53,7 +53,7 @@ Other files:
 ## References
 
 1. Fisher S, Hsu AT, Mojaverian N, Taljaard M, Huyer G, Manuel DG, Tanuseputro P (2018) **Dementia Population Risk Tool (DemPoRT): Study protocol for a predictive algorithm assessing dementia risk in the community**. [BMJ Open 2017;7(10):e01801](https://bmjopen.bmj.com/content/7/10/e018018)
-2. Fisher S, Manuel DG, Hsu AT, Bennett C, Tuna M, Bader Eddeen A, Sequeira Y, Taljaard M, Anderson GM, Tanuseputro P (2020). **Development and validation of a predictive algorithm for risk of dementia in the community setting**. [J Epidemiol Community Health;75(9):843-853] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8372383/)
+2. Fisher S, Manuel DG, Hsu AT, Bennett C, Tuna M, Bader Eddeen A, Sequeira Y, Taljaard M, Anderson GM, Tanuseputro P (2020). **Development and validation of a predictive algorithm for risk of dementia in the community setting**. [J Epidemiol Community Health;75(9):843-853(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8372383/)
 
 ## Building the PMML and engine file
 
